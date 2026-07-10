@@ -64,3 +64,59 @@ export interface CompatResult {
   phOverlap: [number, number] | null;
   tankMin: number;
 }
+
+export interface TankCheckPair {
+  a: Species;
+  b: Species;
+  result: CompatResult;
+}
+
+export interface TankCheckResult {
+  pairs: TankCheckPair[];
+  worst: 0 | 1 | 2;
+  combinedTemp: [number, number] | null;
+  combinedPh: [number, number] | null;
+  recommendedTank: number;
+}
+
+// A personal tank ("내 어항"). Mirrors the `tanks` table.
+export interface Tank {
+  id: string;
+  userId: string;
+  name: string;
+  lengthCm: number;
+  widthCm: number;
+  heightCm: number;
+  volumeL: number;
+  createdAt: string;
+}
+
+// A species stocked in a tank, with a headcount. Mirrors `tank_species`.
+export interface TankSpeciesEntry {
+  id: string;
+  tankId: string;
+  speciesId: string;
+  count: number;
+}
+
+// A water-quality log entry. Mirrors `water_logs`.
+export interface WaterLogEntry {
+  id: string;
+  tankId: string;
+  loggedAt: string;
+  temp: number | null;
+  ph: number | null;
+  ammonia: number | null;
+  nitrite: number | null;
+  nitrate: number | null;
+  note: string | null;
+}
+
+// A recurring maintenance reminder (feeding, water change, ...). Mirrors `reminders`.
+export interface Reminder {
+  id: string;
+  tankId: string;
+  label: string;
+  intervalDays: number;
+  lastDone: string;
+}

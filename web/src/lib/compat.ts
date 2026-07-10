@@ -6,7 +6,7 @@
 // identical to the original prototype. If you need to change wording or
 // rules, change them here — app/index.html is now legacy reference only.
 
-import type { CareGroup, CompatResult, Species, SpeciesPairOverride, Verdict } from './types';
+import type { CareGroup, CompatResult, Species, SpeciesPairOverride, TankCheckResult, Verdict } from './types';
 
 function overlapRange(a: [number, number], b: [number, number]): [number, number] | null {
   const lo = Math.max(a[0], b[0]);
@@ -41,7 +41,7 @@ function findOverride(sA: Species, sB: Species, overrides: SpeciesPairOverride[]
 
 // Merge group-level care spec with species-level identity fields.
 // Species-level fields (if present) override group defaults.
-function getSpec(s: Species, careGroups: Record<string, CareGroup>): CareGroup & Species {
+export function getSpec(s: Species, careGroups: Record<string, CareGroup>): CareGroup & Species {
   return { ...careGroups[s.groupId], ...s };
 }
 
@@ -255,4 +255,31 @@ export function computeCompat(
     phOverlap: phOv,
     tankMin: Math.max(fA.tankMin, fB.tankMin),
   };
+}
+
+// 어항 구성 체크 (3종 이상 한번에) — 기존 2종 비교 엔진을 재사용해서
+// 모든 종 쌍(pair)을 다 비교하고, 그중 가장 심각한 결과를 대표값으로 씀
+export function computeTankCheck(
+  list: Species[],
+  careGroups: Record<string, CareGroup>,
+  overrides: SpeciesPairOverride[] = []
+): TankCheckResult {
+  const pairs = [];
+  for (let i = 0; i < list.length; i++) {
+    for (let j = i + 1; j < list.length; j++) {
+      pairs.push({ a: list[i], b: list[j], result: computeCompat(list[i], list[j], careGroups, overrides) });
+    }
+  }
+  const worst = (pairs.length ? Math.max(...pairs.map((p) => p.result.severity)) : 0) as 0 | 1 | 2;
+
+  let combinedTemp: [number, number] | null = getSpec(list[0], careGroups).temp;
+  let combinedPh: [number, number] | null = getSpec(list[0], careGroups).ph;
+  list.slice(1).forEach((s) => {
+    const f = getSpec(s, careGroups);
+    combinedTemp = combinedTemp ? overlapRange(combinedTemp, f.temp) : null;
+    combinedPh = combinedPh ? overlapRange(combinedPh, f.ph) : null;
+  });
+
+  const recommendedTank = Math.max(...list.map((s) => getSpec(s, careGroups).tankMin));
+  return { pairs, worst, combinedTemp, combinedPh, recommendedTank };
 }

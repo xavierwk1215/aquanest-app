@@ -74,10 +74,12 @@ let cache: Promise<ReferenceData> | null = null;
 // Loads species/care-group reference data. Reads from Supabase when a
 // project is configured (see web/.env.example); otherwise falls back to the
 // bundled static JSON (web/public/species_data.json, a copy of
-// data/species_data.json) so the app works before Supabase is wired up.
+// data/species_data.json) so the app works before Supabase is wired up —
+// and also if the Supabase fetch fails outright (e.g. offline as an
+// installed PWA), so the dex/compat/tank-builder pages keep working.
 export function getReferenceData(): Promise<ReferenceData> {
   if (!cache) {
-    cache = isSupabaseConfigured ? fetchFromSupabase() : fetchFromLocalJson();
+    cache = isSupabaseConfigured ? fetchFromSupabase().catch(() => fetchFromLocalJson()) : fetchFromLocalJson();
   }
   return cache;
 }

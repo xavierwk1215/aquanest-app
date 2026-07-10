@@ -23,7 +23,19 @@ export function useAuth() {
 
 export async function signInWithEmail(email: string) {
   if (!supabase) throw new Error('Supabase가 설정되지 않았습니다.');
-  const { error } = await supabase.auth.signInWithOtp({ email });
+  const { error } = await supabase.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: window.location.origin },
+  });
+  if (error) throw error;
+}
+
+// Verifies the 6-digit code from the same email (an alternative to clicking
+// the magic link). Doesn't depend on redirect URL configuration, so it's a
+// more reliable path for local dev.
+export async function verifyEmailOtp(email: string, token: string) {
+  if (!supabase) throw new Error('Supabase가 설정되지 않았습니다.');
+  const { error } = await supabase.auth.verifyOtp({ email, token, type: 'email' });
   if (error) throw error;
 }
 

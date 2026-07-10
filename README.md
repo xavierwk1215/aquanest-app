@@ -72,5 +72,9 @@ species (그룹을 FK로 참조하는 개체 테이블)
 - `supabase/migrations/`에 `care_groups` / `species` / `species_pair_overrides`(공개 참조 데이터, RLS 읽기 전용) + `tanks` / `tank_species` / `water_logs` / `reminders`(사용자 소유 데이터, RLS로 본인 것만 접근) 스키마 작성
 - `scripts/generate_supabase_seed.mjs`로 `data/species_data.json` → Supabase 시드 SQL 자동 생성
 - Supabase 프로젝트를 아직 연결하지 않아도 `web/public/species_data.json`(로컬 JSON)으로 폴백해 도감·합사 체크가 바로 동작하도록 구성. `web/.env`에 `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`를 채우면 자동으로 Supabase로 전환됨
-- 인증: Supabase Auth 이메일 매직 링크 (내 어항 개인 데이터는 계정별로 RLS 격리)
-- 남은 작업: 어항 구성 체크(N종 조합) 포팅, 내 어항 CRUD(수질 기록/리마인더) 포팅, 실제 Supabase 프로젝트 연결 및 시드 적용
+- 인증: Supabase Auth 이메일 로그인 — 매직 링크 + 6자리 OTP 코드(리다이렉트 URL 설정에 의존하지 않아 로컬 개발 시 더 안정적). 내 어항 개인 데이터는 계정별로 RLS 격리. 실제 프로젝트에 연결해 로그인·어항 CRUD 라이브 테스트까지 완료
+- 어항 구성 체크(N종 조합) 포팅: 기존 2종 비교 엔진을 재사용해 모든 종 쌍을 비교하고 가장 심각한 결과를 대표값으로 표시 + 마릿수 표시(판정에는 미반영, 정보 제공용)
+- 내 어항 CRUD 포팅: 어항 목록/추가·수정·삭제, 종별 사육 현황(권장 어항 크기 대비 충족률·쌍별 궁합), 수질 기록(수온/pH/암모니아/아질산/질산염), 리마인더(주기 알림)를 Supabase 테이블 기반으로 구현
+- 종 도감에 필터(사육난이도/수조크기/사나운 정도/pH) 추가, 합사체크에 수온·pH dual range bar 시각화 추가
+- PWA 설정: 매니페스트 + 서비스워커로 앱 전체와 종 데이터를 미리 캐시해, 도감·합사체크·어항구성체크는 오프라인에서도 동작 (내 어항은 실시간 DB라 온라인 전용)
+- 남은 작업: 단위 변환(cm↔inch, L↔gal), 수질 기록 그래프, 실제 도메인 배포(현재는 Vercel 등 정적 호스팅 연결 전)

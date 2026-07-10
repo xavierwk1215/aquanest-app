@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react';
+import { DualRangeBar } from '../components/DualRangeBar';
 import { useReferenceData } from '../hooks/useReferenceData';
-import { computeCompat } from '../lib/compat';
+import { computeCompat, getSpec } from '../lib/compat';
 import type { CompatResult, Species } from '../lib/types';
 
 const VERDICT_LABEL: Record<0 | 1 | 2, { title: string; cls: string }> = {
@@ -14,6 +15,11 @@ const SEV_COLOR: Record<0 | 1 | 2, string> = {
   1: 'var(--amber)',
   2: 'var(--danger)',
 };
+
+// Fixed axis ranges for the dual bars, matching the original prototype
+// (a bit wider than any single species' range so bars never clip).
+const COMPAT_TEMP_RANGE: [number, number] = [8, 35];
+const COMPAT_PH_RANGE: [number, number] = [4.0, 9.5];
 
 function SpeciesSelect({
   species,
@@ -79,6 +85,8 @@ export function CompatPage() {
   }
 
   const verdict = result ? VERDICT_LABEL[result.severity] : null;
+  const fA = sA && data ? getSpec(sA, data.careGroups) : null;
+  const fB = sB && data ? getSpec(sB, data.careGroups) : null;
 
   return (
     <div>
@@ -116,9 +124,55 @@ export function CompatPage() {
           }}
         >
           <h2 style={{ margin: '0 0 4px', fontSize: 18, color: SEV_COLOR[result.severity] }}>{verdict.title}</h2>
-          <p style={{ margin: '0 0 12px', fontSize: 13, color: 'var(--muted)' }}>
+          <p style={{ margin: '0 0 16px', fontSize: 13, color: 'var(--muted)' }}>
             권장 최소 어항: {result.tankMin}L
           </p>
+
+          {fA && fB && sA && sB && (
+            <>
+              <div style={{ marginBottom: 14 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 6 }}>
+                  <span>수온</span>
+                  <span style={{ color: 'var(--muted)' }}>
+                    {fA.temp[0]}~{fA.temp[1]}°C vs {fB.temp[0]}~{fB.temp[1]}°C
+                  </span>
+                </div>
+                <DualRangeBar
+                  rangeA={fA.temp}
+                  rangeB={fB.temp}
+                  overlap={result.tempOverlap}
+                  min={COMPAT_TEMP_RANGE[0]}
+                  max={COMPAT_TEMP_RANGE[1]}
+                  colorA={fA.color}
+                  colorB={fB.color}
+                />
+                <div style={{ display: 'flex', gap: 16, fontSize: 11, color: 'var(--muted)', marginTop: 6 }}>
+                  <Legend color={fA.color} label={sA.name} />
+                  <Legend color={fB.color} label={sB.name} />
+                  <Legend color="var(--teal)" label="공통 구간" opacity={0.5} />
+                </div>
+              </div>
+
+              <div style={{ marginBottom: 20 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 13, marginBottom: 6 }}>
+                  <span>pH</span>
+                  <span style={{ color: 'var(--muted)' }}>
+                    {fA.ph[0]}~{fA.ph[1]} vs {fB.ph[0]}~{fB.ph[1]}
+                  </span>
+                </div>
+                <DualRangeBar
+                  rangeA={fA.ph}
+                  rangeB={fB.ph}
+                  overlap={result.phOverlap}
+                  min={COMPAT_PH_RANGE[0]}
+                  max={COMPAT_PH_RANGE[1]}
+                  colorA={fA.color}
+                  colorB={fB.color}
+                />
+              </div>
+            </>
+          )}
+
           <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
             {result.reasons.map((r, i) => (
               <li key={i} style={{ fontSize: 13, display: 'flex', gap: 8, lineHeight: 1.6 }}>
@@ -130,5 +184,14 @@ export function CompatPage() {
         </div>
       )}
     </div>
+  );
+}
+
+function Legend({ color, label, opacity }: { color: string; label: string; opacity?: number }) {
+  return (
+    <span style={{ display: 'flex', alignItems: 'center', gap: 5 }}>
+      <span style={{ width: 8, height: 8, borderRadius: 2, background: color, opacity, display: 'inline-block' }} />
+      {label}
+    </span>
   );
 }

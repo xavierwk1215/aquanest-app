@@ -72,5 +72,9 @@ A Vite + React + TypeScript project has been started under `web/`.
 - `supabase/migrations/` defines `care_groups` / `species` / `species_pair_overrides` (public reference data, read-only RLS) plus `tanks` / `tank_species` / `water_logs` / `reminders` (user-owned data, RLS-scoped to the owner).
 - `scripts/generate_supabase_seed.mjs` generates a Supabase seed SQL file from `data/species_data.json`.
 - Without a Supabase project configured, the app falls back to a bundled copy of the JSON (`web/public/species_data.json`) so the species guide and compatibility checker work out of the box. Filling in `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` in `web/.env` switches it over to Supabase automatically.
-- Auth: Supabase Auth email magic links (personal tank data is isolated per account via RLS).
-- Remaining: port the multi-species tank builder check, port My Tanks CRUD (water logs/reminders), connect a real Supabase project and apply the seed.
+- Auth: Supabase Auth email login — magic link plus a 6-digit OTP code (the code path doesn't depend on redirect URL config, so it's more reliable for local dev). Personal tank data is isolated per account via RLS. Verified live end-to-end against a real project (login + tank CRUD).
+- Tank builder check (N species at once) is ported: reuses the pairwise engine across every combination, surfaces the worst result, and shows a per-species headcount (informational only, doesn't affect the verdict).
+- My Tanks CRUD is ported: tank list/create/edit/delete, per-tank stocking view (recommended volume vs. actual, pairwise compatibility), water quality logs (temp/pH/ammonia/nitrite/nitrate), and recurring reminders, all backed by the Supabase tables.
+- Added dex filters (difficulty/tank size/temperament/pH) and a dual temp/pH range-bar visualization on the compatibility checker.
+- PWA support: a manifest and service worker precache the app shell and species data, so the dex, compatibility checker, and tank builder all work offline (My Tanks stays online-only since it's backed by a live DB).
+- Remaining: unit conversion (cm/inch, L/gal), the water-log chart, and a real deployment (not yet hosted anywhere like Vercel).
