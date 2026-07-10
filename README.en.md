@@ -27,9 +27,11 @@ See [`docs/DATA_METHODOLOGY.md`](docs/DATA_METHODOLOGY.md) for the full writeup.
 ## Repository layout
 
 ```
-app/        Runnable frontend prototype (HTML/CSS/JS, PWA)
+app/        Legacy prototype (HTML/CSS/JS, PWA) — kept for reference; new work happens in web/
+web/        React + TypeScript + Vite migration target (in progress)
+supabase/   Supabase schema migrations (SQL) + seed data
 data/       Species data (JSON) + a human-reviewable Excel export
-scripts/    Data pipeline (Excel<->JSON conversion, source cross-verification, Excel report generation)
+scripts/    Data pipeline (Excel<->JSON conversion, source cross-verification, Excel report generation, Supabase seed SQL generation)
 docs/       Data modeling & validation methodology
 ```
 
@@ -62,6 +64,13 @@ Secondary risk factors (niche competition, water sensitivity, etc.) apply as **s
 - Data pipeline: Python (openpyxl)
 - Storage: static JSON (bundled with the app) + personal data in browser localStorage
 
-## Next steps
+## Migration progress (React + Supabase)
 
-Planning a migration to React + Supabase (PostgreSQL). Roadmap tracked in project issues.
+A Vite + React + TypeScript project has been started under `web/`.
+
+- The data model and compatibility engine (`web/src/lib/compat.ts`) were ported to TypeScript with the same rules/logic as the original.
+- `supabase/migrations/` defines `care_groups` / `species` / `species_pair_overrides` (public reference data, read-only RLS) plus `tanks` / `tank_species` / `water_logs` / `reminders` (user-owned data, RLS-scoped to the owner).
+- `scripts/generate_supabase_seed.mjs` generates a Supabase seed SQL file from `data/species_data.json`.
+- Without a Supabase project configured, the app falls back to a bundled copy of the JSON (`web/public/species_data.json`) so the species guide and compatibility checker work out of the box. Filling in `VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY` in `web/.env` switches it over to Supabase automatically.
+- Auth: Supabase Auth email magic links (personal tank data is isolated per account via RLS).
+- Remaining: port the multi-species tank builder check, port My Tanks CRUD (water logs/reminders), connect a real Supabase project and apply the seed.

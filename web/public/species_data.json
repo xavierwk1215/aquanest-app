@@ -1,0 +1,5353 @@
+{
+  "groups": {
+    "guppy": {
+      "temp": [
+        20,
+        28
+      ],
+      "ph": [
+        7.0,
+        8.0
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "플레이크, 브라인쉬림프, 알테미아",
+      "feeding": "하루 1~2회, 2~3분 내 먹을 양",
+      "lifespan": "3~5년",
+      "waterLevel": "상~중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "번식이 매우 빨라 암수 비율 조절이 필요합니다. 새끼를 보호하려면 산란통이나 수초 은신처를 준비하세요.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "betta": {
+      "temp": [
+        24,
+        29
+      ],
+      "ph": [
+        6.5,
+        7.8
+      ],
+      "tankMin": 15,
+      "temperament": "aggressive",
+      "diet": "베타 전용 펠릿, 냉동 장구벌레",
+      "feeding": "하루 1회, 소량",
+      "lifespan": "2~3년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#E0714F",
+      "tips": "수컷끼리는 절대 합사 불가. 화려한 지느러미 어종과도 충돌 위험이 있어 단독 사육을 권장합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "neon-tetra": {
+      "temp": [
+        21,
+        26
+      ],
+      "ph": [
+        5.5,
+        7.5
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "미세 플레이크, 소형 냉동먹이",
+      "feeding": "하루 1~2회, 소량씩",
+      "lifespan": "5~8년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "약산성 연수를 선호해 급격한 수질 변화에 민감합니다. 최소 6마리 이상 무리 사육 시 스트레스가 줄어듭니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "high"
+    },
+    "corydoras": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "침전성 펠릿, 냉동 장구벌레",
+      "feeding": "하루 1회, 야간 위주",
+      "lifespan": "5~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 4
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "바닥재는 모서리가 둥근 모래를 사용해야 수염이 상하지 않습니다. 바닥 청소부 역할을 합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "angelfish": {
+      "temp": [
+        24,
+        29
+      ],
+      "ph": [
+        6.5,
+        7.4
+      ],
+      "tankMin": 100,
+      "temperament": "semi-aggressive",
+      "diet": "대형 플레이크, 냉동 브라인쉬림프",
+      "feeding": "하루 1~2회",
+      "lifespan": "8~10년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#F2A65A",
+      "tips": "몸집에 비해 수조가 높아야 합니다(45cm 이상 권장). 소형 어종을 먹이로 인식할 수 있어 합사에 주의하세요.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "zebra-danio": {
+      "temp": [
+        18,
+        24
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "잡식성 플레이크",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~5년",
+      "waterLevel": "상~중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "매우 활동적이라 뚜껑을 꼭 덮어야 합니다(점프 잘함). 저온에도 강해 초보자에게 적합합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "platy": {
+      "temp": [
+        20,
+        26
+      ],
+      "ph": [
+        7,
+        8.2
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "잡식성 플레이크, 채소",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~4년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "번식이 활발한 난태생 어종. 경도가 높은 물을 선호해 구피와 비슷한 환경에서 잘 지냅니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "molly": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        7.5,
+        8.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "채소성 잡식 (스피룰리나 플레이크)",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~5년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "약염수 환경에서 컨디션이 좋아지는 경우가 많습니다. 채식 비중이 높은 먹이가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "swordtail": {
+      "temp": [
+        21,
+        28
+      ],
+      "ph": [
+        7,
+        8.2
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~5년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "수컷끼리는 서열 다툼이 있을 수 있어 수컷 여러 마리 사육 시 넉넉한 공간이 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "cardinal-tetra": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        5.5,
+        7.0
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "소형 플레이크, 냉동먹이",
+      "feeding": "하루 1~2회, 소량",
+      "lifespan": "3~4년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "네온테트라와 흡사하지만 붉은 줄무늬가 몸 전체에 걸쳐 있습니다. 연수/약산성 환경에서 발색이 좋습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "high"
+    },
+    "black-skirt-tetra": {
+      "temp": [
+        20,
+        26
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~5년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "지느러미를 무는 습성이 있어 베일테일 어종과는 합사를 피하는 게 좋습니다.",
+      "finNipper": true,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "cherry-barb": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4~6년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "온순한 편에 속하는 바브류라 커뮤니티 탱크에 무난합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "tiger-barb": {
+      "temp": [
+        22,
+        27
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4~6년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "소수로 키우면 지느러미를 무는 습성이 강해지므로 반드시 6마리 이상 무리로 키워야 합니다.",
+      "finNipper": true,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "harlequin-rasbora": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        5.5,
+        7.0
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "소형 플레이크",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~8년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "무리 지어 다니는 모습이 아름다운 종으로 연수 블랙워터 환경을 선호합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "kuhli-loach": {
+      "temp": [
+        23,
+        28
+      ],
+      "ph": [
+        5.5,
+        6.5
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "침전성 먹이",
+      "feeding": "야간 위주 급여",
+      "lifespan": "10년 이상",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "장어처럼 가늘고 길쭉하며 낮에는 은신처에 숨어 지내는 야행성입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "otocinclus": {
+      "temp": [
+        21,
+        26
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "갈조류, 블랜칭한 채소",
+      "feeding": "매일 소량",
+      "lifespan": "3~5년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 4
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "갈조류 청소부로 유명하지만 입식 초기 굶어죽는 경우가 많아 수조에 갈조류가 충분히 생긴 후 입식하는 게 안전합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "bristlenose-pleco": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "침전성 플레코 전용 먹이, 채소",
+      "feeding": "매일",
+      "lifespan": "5~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "다른 플레코와 달리 크기가 작아 가정용 수조에 적합한 청소부입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "common-pleco": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 400,
+      "temperament": "peaceful",
+      "diet": "침전성 채식 위주",
+      "feeding": "매일",
+      "lifespan": "10~15년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#38B6A3",
+      "tips": "성어가 되면 45cm 이상 자라 대형 수조가 필수입니다. 소형 수조에서는 절대 키우지 마세요.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "dwarf-gourami": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 60,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4~6년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#F2A65A",
+      "tips": "수컷끼리는 영역 다툼이 있어 한 수조에 수컷 한 마리만 권장합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": true,
+      "waterSensitivity": "low"
+    },
+    "pearl-gourami": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4~8년",
+      "waterLevel": "상~중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "구라미 중에서도 성격이 온순한 편이라 커뮤니티 탱크에 잘 어울립니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "honey-gourami": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4년",
+      "waterLevel": "상~중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "소형 구라미로 소형 어항에도 적합하며 온순합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "kissing-gourami": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6.5,
+        8
+      ],
+      "tankMin": 300,
+      "temperament": "semi-aggressive",
+      "diet": "채식성 잡식",
+      "feeding": "매일",
+      "lifespan": "20년 이상",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#F2A65A",
+      "tips": "이름과 달리 입맞춤은 애정표현이 아닌 힘겨루기입니다. 크게 자라 대형 수조가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "discus": {
+      "temp": [
+        28,
+        30
+      ],
+      "ph": [
+        6.4,
+        7.8
+      ],
+      "tankMin": 200,
+      "temperament": "peaceful",
+      "diet": "디스커스 전용 사료",
+      "feeding": "하루 2~3회",
+      "lifespan": "10~15년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "고급",
+      "color": "#38B6A3",
+      "tips": "높은 수온과 예민한 수질 관리가 필요해 입문자에게는 어려운 종입니다. 잦은 수질 체크가 필수입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "high"
+    },
+    "german-blue-ram": {
+      "temp": [
+        26,
+        29
+      ],
+      "ph": [
+        5,
+        7
+      ],
+      "tankMin": 80,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "2~3년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "높은 수온을 선호해 다른 저온성 어종과는 합사가 어렵습니다. 짝을 지어 키우면 흥미로운 행동을 볼 수 있습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "high"
+    },
+    "kribensis": {
+      "temp": [
+        24,
+        27
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 90,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~5년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "산란기에는 영역 방어가 강해지므로 은신처를 충분히 제공해야 합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": true,
+      "territorial": true,
+      "waterSensitivity": "medium"
+    },
+    "oscar": {
+      "temp": [
+        22,
+        27
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 250,
+      "temperament": "aggressive",
+      "diet": "육식성 (펠릿, 냉동새우)",
+      "feeding": "하루 1회",
+      "lifespan": "10~20년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "매우 크게 자라고 지능이 높아 주인을 알아보는 것으로 유명하지만 소형 어종은 먹이로 인식합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "firemouth-cichlid": {
+      "temp": [
+        23,
+        28
+      ],
+      "ph": [
+        6.5,
+        8
+      ],
+      "tankMin": 120,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "8~10년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "위협 시 붉은 아가미를 부풀리는 행동으로 유명합니다. 영역성이 있어 넓은 수조가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": true,
+      "waterSensitivity": "medium"
+    },
+    "convict-cichlid": {
+      "temp": [
+        22,
+        27
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 120,
+      "temperament": "aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "8~10년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#E0714F",
+      "tips": "번식력이 매우 강하고 새끼를 지킬 때 공격성이 극도로 높아집니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": true,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "rainbow-shark": {
+      "temp": [
+        22,
+        27
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 150,
+      "temperament": "aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1회",
+      "lifespan": "6~8년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#E0714F",
+      "tips": "영역성이 강해 자신과 비슷한 체형의 어종을 공격하는 경우가 많습니다. 한 수조에 한 마리만 권장합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": true,
+      "waterSensitivity": "medium"
+    },
+    "bala-shark": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 500,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 4
+      },
+      "difficulty": "고급",
+      "color": "#38B6A3",
+      "tips": "성어가 되면 매우 크게 자라고 무리 생활이 필요해 대형 수조가 아니면 키우기 어렵습니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "rosy-barb": {
+      "temp": [
+        18,
+        25
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 80,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4~6년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "초급",
+      "color": "#F2A65A",
+      "finNipper": true,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low",
+      "tips": "평소엔 온순하지만 무리가 5마리 미만으로 부족하면 지느러미를 무는 습성이 나타납니다. 베타나 엔젤피시처럼 지느러미가 길고 느린 어종과는 합사를 피하세요."
+    },
+    "endlers-livebearer": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        7.0,
+        8.5
+      ],
+      "tankMin": 30,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "2~3년",
+      "waterLevel": "상~중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "구피와 유사하지만 크기가 더 작고 색이 화려합니다. 구피와 교잡이 가능해 순종 유지를 원하면 분리 사육해야 합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "celestial-pearl-danio": {
+      "temp": [
+        20,
+        25
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "소형 플레이크, 미세 먹이",
+      "feeding": "하루 2회 소량",
+      "lifespan": "3~5년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "몸집이 매우 작아 소형 수조에 적합하지만 입이 작아 먹이 크기를 신경 써야 합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "white-cloud-mountain-minnow": {
+      "temp": [
+        16,
+        24
+      ],
+      "ph": [
+        6,
+        8
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~5년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "저온에 강해 히터 없는 냉수 수조에서도 사육이 가능합니다. 단독 또는 소수로 키우면 오히려 다른 온순한 어종(구피, 할리퀸라스보라 등)을 쫓아다니며 지느러미를 무는 경우가 보고되어, 충분한 무리로 키우는 게 안전합니다.",
+      "finNipper": true,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "glowlight-tetra": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6,
+        7
+      ],
+      "tankMin": 45,
+      "temperament": "peaceful",
+      "diet": "소형 플레이크",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~5년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "은은하게 빛나는 주황색 줄무늬가 특징이며 성격이 온순합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "ember-tetra": {
+      "temp": [
+        23,
+        28
+      ],
+      "ph": [
+        5.5,
+        7
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "초소형 플레이크",
+      "feeding": "하루 2회 소량",
+      "lifespan": "2~3년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 8
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "매우 작은 몸집이라 소형 수조에도 무리 지어 키우기 좋습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "rummynose-tetra": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        5.5,
+        7
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "소형 플레이크",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~6년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 8
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "코 끝의 붉은색이 진하게 나타나는 것은 수질이 안정적이라는 신호로 여겨집니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "high"
+    },
+    "congo-tetra": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.0,
+        7.0
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~5년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "수컷의 무지갯빛 비늘과 긴 지느러미가 특징이며 넓은 유영 공간이 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "silver-dollar": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6,
+        7
+      ],
+      "tankMin": 300,
+      "temperament": "peaceful",
+      "diet": "채식 위주 잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "수초를 매우 잘 뜯어먹어 살아있는 수초와 함께 키우기 어렵습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "clown-loach": {
+      "temp": [
+        25,
+        30
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 400,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1회",
+      "lifespan": "15~20년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "고급",
+      "color": "#38B6A3",
+      "tips": "매우 크게 자라고 장수하며 무리 생활이 필수라 대형 수조와 장기 계획이 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "yoyo-loach": {
+      "temp": [
+        20,
+        27
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 150,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1회",
+      "lifespan": "8~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "무늬가 성장하며 변하는 것이 특징이며 달팽이 제거에 효과적입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "flying-fox": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성 (갈조류 포함)",
+      "feeding": "하루 1회",
+      "lifespan": "8~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "레인보우샤크와 혼동되지만 상대적으로 온순하나 같은 종끼리는 다툼이 있습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "siamese-algae-eater": {
+      "temp": [
+        24,
+        27
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "갈조류, 채소",
+      "feeding": "매일",
+      "lifespan": "5~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "검은 수염말(black beard algae)까지 먹는 몇 안 되는 어종으로 조류 관리에 유용합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "bolivian-ram": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "3~4년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "저먼블루람보다 온도 적응력이 넓어 커뮤니티 탱크에 합사하기 수월합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "jack-dempsey": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 250,
+      "temperament": "aggressive",
+      "diet": "육식성 잡식",
+      "feeding": "하루 1회",
+      "lifespan": "10~15년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "성체가 되면 공격성이 매우 강해져 단독 사육이나 비슷한 크기의 시클리드와만 합사해야 합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "green-terror": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6.5,
+        8
+      ],
+      "tankMin": 300,
+      "temperament": "aggressive",
+      "diet": "육식성 잡식",
+      "feeding": "하루 1회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "이름처럼 공격적이며 성체 크기가 커서 대형 시클리드 전용 수조가 필요합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "blue-acara": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6.5,
+        8
+      ],
+      "tankMin": 200,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "다른 대형 시클리드에 비해 비교적 온순한 편에 속합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "severum": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6,
+        7.5
+      ],
+      "tankMin": 200,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "디스커스와 비슷한 체형이지만 사육 난이도는 상대적으로 낮은 편입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "paradise-fish": {
+      "temp": [
+        16,
+        24
+      ],
+      "ph": [
+        6,
+        8
+      ],
+      "tankMin": 60,
+      "temperament": "aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "6~8년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#E0714F",
+      "tips": "저온에 강해 히터 없이도 키울 수 있지만 공격성이 강해 합사에 주의해야 합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "boesemani-rainbowfish": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        7,
+        8
+      ],
+      "tankMin": 150,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~8년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "성어가 될수록 색이 화려해지며 무리 지어 키울 때 발색이 더 좋아집니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "mbuna": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        7.8,
+        8.6
+      ],
+      "tankMin": 200,
+      "temperament": "aggressive",
+      "diet": "초식성 위주 (스피룰리나 기반 사료), 고단백 사료는 지양",
+      "feeding": "하루 1~2회 소량",
+      "lifespan": "6~10년",
+      "waterLevel": "중~하층 (암초 서식)",
+      "schooling": {
+        "need": true,
+        "minGroup": 4
+      },
+      "difficulty": "중급",
+      "color": "#E0714F",
+      "tips": "동종 내 서열 다툼이 심해 수컷 1 : 암컷 다수 비율로 사육하는 게 안전합니다. 암석 은신처를 넉넉히 배치하세요.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": true,
+      "waterSensitivity": "medium"
+    },
+    "peacock": {
+      "temp": [
+        24,
+        27
+      ],
+      "ph": [
+        7.8,
+        8.6
+      ],
+      "tankMin": 200,
+      "temperament": "semi-aggressive",
+      "diet": "곤충食 위주 잡식성 사료",
+      "feeding": "하루 1~2회",
+      "lifespan": "6~8년",
+      "waterLevel": "중~하층 (모래 서식)",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "음부나보다 온순해 혼합 사육이 비교적 수월하지만 수컷끼리는 다툼이 있을 수 있습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "hap": {
+      "temp": [
+        24,
+        27
+      ],
+      "ph": [
+        7.6,
+        8.4
+      ],
+      "tankMin": 300,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 위주 (소형 물고기, 냉동새우)",
+      "feeding": "하루 1회",
+      "lifespan": "8~10년",
+      "waterLevel": "중~상층 (개방 수역)",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "개방 수역을 헤엄치는 포식성 시클리드로, 소형 어종은 먹이로 인식할 수 있어 합사에 주의가 필요합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "frontosa": {
+      "temp": [
+        24,
+        26
+      ],
+      "ph": [
+        7.8,
+        9.0
+      ],
+      "tankMin": 400,
+      "temperament": "peaceful",
+      "diet": "육식성 (냉동새우, 시클리드 전용 펠릿)",
+      "feeding": "하루 1회 소량",
+      "lifespan": "15~20년",
+      "waterLevel": "중~하층 (심수 서식)",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "고급",
+      "color": "#38B6A3",
+      "tips": "덩치에 비해 온순하지만 성장이 매우 느리고 장수하는 대형종이라 장기 계획과 초대형 수조가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "tropheus": {
+      "temp": [
+        24,
+        27
+      ],
+      "ph": [
+        7.8,
+        9.0
+      ],
+      "tankMin": 300,
+      "temperament": "aggressive",
+      "diet": "엄격한 초식성 (해조류 기반 사료), 고단백 사료 금지",
+      "feeding": "하루 2~3회 소량",
+      "lifespan": "8~10년",
+      "waterLevel": "중~하층 (암초)",
+      "schooling": {
+        "need": true,
+        "minGroup": 10
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "고단백 먹이를 주면 팽창병(bloat)에 걸리기 쉬워 반드시 초식 전용 사료를 급여해야 합니다. 대규모 무리 사육이 안정에 도움됩니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "tanganyika-shell-dweller": {
+      "temp": [
+        24,
+        27
+      ],
+      "ph": [
+        7.8,
+        9.0
+      ],
+      "tankMin": 100,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 잡식 (냉동 장구벌레 등)",
+      "feeding": "하루 1회",
+      "lifespan": "5~8년",
+      "waterLevel": "하층 (바위/조개껍질)",
+      "schooling": {
+        "need": false,
+        "minGroup": 2
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "짝을 이루면 자신의 영역을 강하게 방어합니다. 바위굴이나 조개껍질 은신처가 꼭 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": true,
+      "waterSensitivity": "medium"
+    },
+    "altolamprologus": {
+      "temp": [
+        24,
+        27
+      ],
+      "ph": [
+        7.8,
+        9.0
+      ],
+      "tankMin": 150,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 (달팽이, 냉동새우)",
+      "feeding": "하루 1회",
+      "lifespan": "8~10년",
+      "waterLevel": "하층 (암초 틈새)",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "달팽이를 즐겨 먹어 자연스러운 방제 역할을 하며, 바위 틈 서식 습성상 좁은 틈새 은신처가 필요합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": true,
+      "waterSensitivity": "medium"
+    },
+    "three-spot-gourami": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 100,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4~6년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#F2A65A",
+      "tips": "골드/오팔린/플래티넘 등 색상 품종이 다양하며 기본 사육 조건은 동일합니다. 수컷끼리는 다툼이 있을 수 있습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "moonlight-gourami": {
+      "temp": [
+        25,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4~6년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "은은한 청록빛 몸체가 특징이며 구라미 중에서도 온순한 편에 속합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "snakeskin-gourami": {
+      "temp": [
+        25,
+        28
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 150,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "매일",
+      "lifespan": "5~8년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "성어가 되면 25cm 이상 자라 큰 수조가 필요합니다. 동남아시아에서는 식용으로도 기르는 대형 구라미입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "giant-gourami": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6.5,
+        8.0
+      ],
+      "tankMin": 1000,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성 (채소 포함)",
+      "feeding": "매일",
+      "lifespan": "10~20년",
+      "waterLevel": "전층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "성어가 70cm까지도 자라는 초대형 구라미로 가정용 수조로는 감당하기 어렵습니다. 충분한 사전 조사 후 입양을 결정하세요.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "chocolate-gourami": {
+      "temp": [
+        25,
+        29
+      ],
+      "ph": [
+        4.0,
+        6.5
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "소형 육식성 (냉동 미세 먹이)",
+      "feeding": "소량씩 자주",
+      "lifespan": "2~4년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "고급",
+      "color": "#38B6A3",
+      "tips": "매우 예민한 블랙워터 어종으로 안정된 연수/약산성 환경과 낮은 질산염이 필수입니다. 입문자에게는 추천하지 않습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "high"
+    },
+    "trichopsis-gourami": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        5.5,
+        8.0
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "소형 육식성",
+      "feeding": "소량씩 자주",
+      "lifespan": "2~4년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "몸집이 작고 소리를 내는 독특한 습성이 있어 조용한 커뮤니티 탱크에 적합합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "licorice-gourami": {
+      "temp": [
+        24,
+        27
+      ],
+      "ph": [
+        4.0,
+        6.0
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "소형 육식성",
+      "feeding": "소량씩 자주",
+      "lifespan": "2~3년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 4
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "극단적으로 연약한 블랙워터 전용종으로 여과된 빗물 수준의 연수가 필요해 사육 난이도가 매우 높습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "high"
+    },
+    "thicklip-gourami": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "4~6년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "두꺼운 입술이 특징이며 온순해 커뮤니티 탱크에 잘 어울립니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "badis": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 40,
+      "temperament": "semi-aggressive",
+      "diet": "소형 육식성 (살아있는/냉동 먹이 선호)",
+      "feeding": "소량씩 자주",
+      "lifespan": "2~3년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "매우 작지만 화려한 색의 나노피시로, 인공사료 적응이 느려 살아있는 먹이나 냉동 먹이 급여가 필요한 경우가 많습니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "leaf-fish": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "aggressive",
+      "diet": "육식성, 살아있는 먹이 선호 (인공사료 적응 어려움)",
+      "feeding": "2~3일에 1회",
+      "lifespan": "3~5년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "낙엽처럼 위장해 매복 사냥하는 포식성 어종으로, 자신보다 작은 물고기는 먹이로 인식합니다. 인공사료를 잘 먹지 않아 사육 난이도가 높습니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "datnoid": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 500,
+      "temperament": "aggressive",
+      "diet": "육식성 (살아있는/냉동 먹이)",
+      "feeding": "하루 1회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "기수역 출신으로 약간의 소금 첨가가 도움이 될 수 있으며, 성체가 크게 자라 대형 수조가 필요한 고급자용 어종입니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "leopard-ctenopoma": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "aggressive",
+      "diet": "육식성",
+      "feeding": "2~3일에 1회",
+      "lifespan": "5~10년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#E0714F",
+      "tips": "낙엽 무늬로 위장해 매복하는 포식성 어종으로 작은 물고기와는 합사할 수 없습니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "synodontis-general": {
+      "temp": [
+        23,
+        28
+      ],
+      "ph": [
+        6.2,
+        8.0
+      ],
+      "tankMin": 200,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "야간 위주 급여",
+      "lifespan": "10~15년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "야행성 메기로 낮에는 은신처에 숨어 있다가 야간에 활동적으로 먹이 활동을 합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "synodontis-cuckoo": {
+      "temp": [
+        25,
+        27
+      ],
+      "ph": [
+        7.2,
+        8.0
+      ],
+      "tankMin": 150,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 (달팽이 포식 특화)",
+      "feeding": "하루 1회",
+      "lifespan": "15~20년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "말라위 시클리드 등 입안부화(마우스브루더) 어종의 알 사이에 자신의 알을 몰래 낳는 '탁란(브루드 패러사이트)' 습성으로 유명합니다. 입안부화 시클리드와 함께 키우면 숙주가 이 메기의 새끼까지 대신 키우게 되는 특이 현상이 생길 수 있습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "upside-down-catfish": {
+      "temp": [
+        24,
+        26
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1회",
+      "lifespan": "10~15년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "배를 위로 하고 거꾸로 헤엄치는 독특한 습성으로 유명하며, 온순해 커뮤니티 탱크에 잘 어울립니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "pictus-catfish": {
+      "temp": [
+        22,
+        25
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 210,
+      "temperament": "semi-aggressive",
+      "diet": "육식성",
+      "feeding": "하루 1회, 야간 위주",
+      "lifespan": "8년 내외",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 4
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "긴 수염이 특징인 야행성 메기로, 입에 들어갈 크기의 작은 물고기는 먹이로 인식할 수 있어 합사에 주의가 필요합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "glass-catfish": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "소형 육식성",
+      "feeding": "소량씩 자주",
+      "lifespan": "5~8년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "몸이 투명해 뼈와 내장이 비쳐 보이는 독특한 어종입니다. 무리가 작으면 스트레스를 심하게 받고, 약물에 매우 민감해 질병 치료 시 주의가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "high"
+    },
+    "whiptail-catfish": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "갈조류, 침전성 채식 사료",
+      "feeding": "매일",
+      "lifespan": "5~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "나뭇가지처럼 위장하는 독특한 외형의 메기로, 유목(드리프트우드)을 갉아먹는 습성이 있어 수조에 유목을 넣어주는 게 좋습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "hillstream-loach": {
+      "temp": [
+        18,
+        24
+      ],
+      "ph": [
+        7.0,
+        7.8
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "갈조류, 침전성 사료",
+      "feeding": "매일",
+      "lifespan": "5~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 4
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "원산지의 급류 환경 때문에 일반 열대어보다 서늘한 수온과 매우 강한 수류·고용존산소가 필요합니다. 일반적인 열대어 세팅과 달라 별도의 조류 펌프가 필요할 수 있습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "clown-pleco": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "유목 갈조류, 채소",
+      "feeding": "매일",
+      "lifespan": "10년 내외",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "브리슬노즈플레코보다 더 작게 자라는 소형 플레코로, 소형 수조에도 적합합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "royal-pleco": {
+      "temp": [
+        26,
+        30
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 300,
+      "temperament": "peaceful",
+      "diet": "유목 필수 (목질섬유 소화), 채소",
+      "feeding": "매일",
+      "lifespan": "10~15년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "유목의 목질을 실제로 소화하는 특이 소화계를 가지고 있어 수조에 유목이 반드시 있어야 합니다. 대형종이라 성어가 되면 큰 수조가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "rubber-pleco": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "갈조류 위주",
+      "feeding": "매일",
+      "lifespan": "10년 내외",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "빠른 유속을 선호하는 종으로, 일반 열대어보다 서늘하고 산소가 풍부한 환경에서 컨디션이 좋습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "talking-catfish": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 150,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "야간 위주",
+      "lifespan": "10~15년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "스트레스를 받거나 손으로 잡으면 '끽끽'거리는 소리를 내는 것으로 유명합니다. 가슴지느러미 가시가 그물에 잘 걸리니 이동 시 주의하세요.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "puffer-dwarf": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        7.0,
+        8.5
+      ],
+      "tankMin": 40,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 (달팽이 필수)",
+      "feeding": "매일 소량, 달팽이 급여 필수",
+      "lifespan": "4년 내외",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "완전 담수종으로 소금 없이도 사육 가능합니다. 달팽이 위주 식성 때문에 인공사료 적응이 어려운 경우가 많고, 영역성이 강해 좁은 수조에 여러 마리를 넣으면 서로 공격할 수 있습니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": true,
+      "waterSensitivity": "medium"
+    },
+    "puffer-brackish": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        7.8,
+        9.0
+      ],
+      "tankMin": 100,
+      "temperament": "aggressive",
+      "diet": "육식성 (달팽이, 갑각류)",
+      "feeding": "매일",
+      "lifespan": "5~10년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "어릴 때는 담수에서도 지낼 수 있지만, 성장하면서 점차 기수~해수 수준의 염분이 필요해집니다. 순수 담수만으로는 장기적으로 건강을 유지하기 어렵습니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "puffer-giant-freshwater": {
+      "temp": [
+        24,
+        26
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 500,
+      "temperament": "aggressive",
+      "diet": "육식성 (달팽이, 갑각류, 생먹이)",
+      "feeding": "하루 1회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "완전 담수에서 사육 가능한 대형 퍼퍼로 사람을 알아볼 정도로 영리하지만 매우 공격적이라 반드시 단독 사육해야 합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "killifish-clown": {
+      "temp": [
+        20,
+        26
+      ],
+      "ph": [
+        5.0,
+        7.0
+      ],
+      "tankMin": 30,
+      "temperament": "peaceful",
+      "diet": "소형 육식성 (모기유충 등)",
+      "feeding": "소량씩 자주",
+      "lifespan": "2~3년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "수면 근처에 떠서 지내는 표층 어종으로, 뚜껑이 없는 수조에서는 점프에 주의해야 합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "killifish-annual": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 40,
+      "temperament": "semi-aggressive",
+      "diet": "육식성",
+      "feeding": "매일",
+      "lifespan": "1년 내외 (연간어)",
+      "waterLevel": "상~중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "우기와 건기가 반복되는 서식지 특성상, 알이 마른 진흙 속에서 수개월간 휴면(다이어폴즈)했다가 부화하는 독특한 생활사를 가집니다. 이탄(피트모스) 산란상이 필요해 일반 어종과는 완전히 다른 번식 관리가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "rainbowfish-melanotaenia": {
+      "temp": [
+        22,
+        30
+      ],
+      "ph": [
+        6.5,
+        8.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~8년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "활발하게 헤엄치는 어종이라 폭이 넓은 수조가 필요하며, 무리 지어 키울 때 수컷의 발색이 더 화려해집니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "rainbowfish-nano-blueeye": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        5.5,
+        7.5
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "소형 잡식성",
+      "feeding": "소량씩 자주",
+      "lifespan": "2~3년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 8
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "일반 레인보우피시보다 훨씬 작은 나노 어종으로, 소형 수조에서도 무리 지어 키울 수 있습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "rainbowfish-madagascar": {
+      "temp": [
+        23,
+        28
+      ],
+      "ph": [
+        5.5,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "육식성 위주",
+      "feeding": "하루 1~2회",
+      "lifespan": "5년 내외",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "다른 레인보우피시와 달리 육식 성향이 강해 단백질 비율이 높은 먹이가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "black-shark": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6.5,
+        8.0
+      ],
+      "tankMin": 500,
+      "temperament": "aggressive",
+      "diet": "잡식성 (갈조류 포함)",
+      "feeding": "하루 1회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "성어가 되면 60cm 이상 자라고 동종 및 비슷한 체형의 어종에게 매우 공격적이라 반드시 단독 사육해야 합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "brackish-shark-catfish": {
+      "temp": [
+        25,
+        27
+      ],
+      "ph": [
+        6.8,
+        8.0
+      ],
+      "tankMin": 300,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 잡식",
+      "feeding": "하루 1회",
+      "lifespan": "10~15년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "고급",
+      "color": "#F2A65A",
+      "tips": "이름과 겉모습은 상어를 닮았지만 실제로는 메기류입니다. 어릴 때는 담수에서 지낼 수 있지만 성장하면서 기수(brackish) 수준의 염분이 필요해지므로 장기적으로는 소금 첨가가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "hatchetfish-silver": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.0,
+        7.0
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "표층 소형 먹이 (날파리 등 선호)",
+      "feeding": "소량씩 자주",
+      "lifespan": "3~5년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "수면 위로 뛰어올라 날아다니는 듯한 특이한 습성이 있어 반드시 뚜껑이 있는 수조가 필요합니다. 표층에서만 활동하므로 폭이 넓은 수조가 유리합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "black-ghost-knifefish": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 300,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 (야간 위주)",
+      "feeding": "야간 위주 급여",
+      "lifespan": "10~15년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#F2A65A",
+      "tips": "약한 전기를 발생시켜 주변을 감지하는 야행성 어종입니다. 동종끼리 매우 공격적이라 한 수조에 한 마리만 키우는 것이 안전합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "pencil-fish": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        5.5,
+        7.0
+      ],
+      "tankMin": 60,
+      "temperament": "peaceful",
+      "diet": "소형 잡식성",
+      "feeding": "소량씩 자주",
+      "lifespan": "3~5년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "네온테트라와 비슷한 크기의 온순한 어종으로, 약산성 연수 환경과 무리 사육 시 컨디션이 좋습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "african-red-eye-tetra": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5년 내외",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "콩고테트라와 마찬가지로 아프리카산 대형 테트라로, 무리 지어 키울 때 헤엄치는 모습이 화려합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "headstander-fish": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~8년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "머리를 아래로 향한 채 45도 각도로 떠다니는 독특한 자세가 특징인 어종입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "prochilodus": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 300,
+      "temperament": "peaceful",
+      "diet": "잡식성 (조류, 유기물 포함)",
+      "feeding": "매일",
+      "lifespan": "10년 내외",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "성어가 되면 30cm 가까이 자라는 대형 어종으로 무리 지어 키우려면 넓은 수조가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "piranha": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 300,
+      "temperament": "aggressive",
+      "diet": "육식성 (육류, 생선)",
+      "feeding": "하루 1회",
+      "lifespan": "10년 이상",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "다른 어종과의 합사는 사실상 불가능하며 반드시 피라냐끼리만 무리 사육해야 합니다. 국가/지역에 따라 소유·수입이 법적으로 제한될 수 있으니 사전에 확인이 필요합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "pacu": {
+      "temp": [
+        23,
+        28
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 1000,
+      "temperament": "peaceful",
+      "diet": "채식 위주 잡식성",
+      "feeding": "매일",
+      "lifespan": "15~20년 이상",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#F2A65A",
+      "tips": "피라냐와 혼동되지만 실제로는 온순한 초식성 대형어입니다. 성어가 되면 60~90cm까지 자라 가정용 수조로는 감당하기 어려운 경우가 대부분이라 신중한 사전 조사가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "serpae-tetra": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        5.5,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~7년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 8
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "다른 테트라에 비해 지느러미를 무는 습성이 강한 편이라, 긴 지느러미를 가진 어종과는 합사를 피하는 게 좋습니다. 충분히 큰 무리로 키우면 공격성이 분산됩니다.",
+      "finNipper": true,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "bleeding-heart-tetra": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5년 내외",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "가슴 부위의 붉은 반점이 특징이며, 혼자 있으면 다소 신경질적이 되므로 충분한 무리로 키우는 게 좋습니다.",
+      "finNipper": true,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "diamond-tetra": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5년 내외",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "몸 전체에 다이아몬드처럼 반짝이는 비늘이 특징인 온순한 테트라입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "buenos-aires-tetra": {
+      "temp": [
+        18,
+        26
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 120,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성 (수초도 먹음)",
+      "feeding": "하루 1~2회",
+      "lifespan": "5년 내외",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#F2A65A",
+      "tips": "저온에도 강해 사육이 쉽지만 수초를 뜯어먹는 습성이 있어 유코 수조에는 적합하지 않습니다.",
+      "finNipper": true,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "emperor-tetra": {
+      "temp": [
+        23,
+        28
+      ],
+      "ph": [
+        5.5,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5년 내외",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "테트라 중에서도 기품 있는 외모로 인기가 많으며 비교적 사육이 수월한 편입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "penguin-tetra": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5년 내외",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "비스듬히 위를 향해 헤엄치는 독특한 자세가 특징인 온순한 테트라입니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "blind-cave-tetra": {
+      "temp": [
+        20,
+        26
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 80,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~10년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#F2A65A",
+      "tips": "동굴에 적응하며 눈이 퇴화된 독특한 어종으로 시각 대신 측선을 이용해 주변을 감지합니다. 어두운 조명에서도 잘 적응합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "apistogramma": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        5.5,
+        7.0
+      ],
+      "tankMin": 60,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "2~4년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "수컷 1마리에 암컷 여러 마리로 구성된 하렘 형태로 키우면 공격성이 분산됩니다. 은신처와 고운 모래 바닥이 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "polypterus": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 300,
+      "temperament": "aggressive",
+      "diet": "육식성",
+      "feeding": "하루 1회, 야간 위주",
+      "lifespan": "15년 이상",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "고대어종으로 공기 호흡이 가능해 수면 위로 자주 올라옵니다. 탈출의 명수라 뚜껑이 반드시 필요하고, 입에 들어가는 크기의 물고기는 먹이로 인식합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "spiny-eel": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 150,
+      "temperament": "peaceful",
+      "diet": "육식성 (살아있는 먹이 선호)",
+      "feeding": "야간 위주 급여",
+      "lifespan": "8~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "몸이 가늘고 길어 좁은 틈새로 파고드는 습성이 있어 여과기 흡입구를 반드시 막아야 하며, 모래 바닥에 파고들기를 좋아합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "halfbeak": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        7.0,
+        8.0
+      ],
+      "tankMin": 60,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 (모기유충 등)",
+      "feeding": "하루 1~2회",
+      "lifespan": "1~2년",
+      "waterLevel": "상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 4
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "수컷끼리는 격렬하게 싸우는 습성이 있어 한 수조에 수컷 한 마리만 권장합니다. 표층 서식 어종으로 점프에 주의해야 합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "gold-barb": {
+      "temp": [
+        18,
+        25
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~6년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "저온에도 강해 사육이 쉬운 편이며, 무리 지어 키우면 서로간의 다툼이 줄어듭니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "denison-barb": {
+      "temp": [
+        15,
+        25
+      ],
+      "ph": [
+        6.5,
+        7.8
+      ],
+      "tankMin": 300,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "7~8년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "고급",
+      "color": "#F2A65A",
+      "tips": "빠르게 흐르는 하천 출신이라 강한 수류와 높은 용존산소가 필요합니다. 남획으로 개체수가 줄어든 종이라 양식산인지 확인 후 구매하는 것이 좋습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "weather-loach": {
+      "temp": [
+        15,
+        25
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 150,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1회",
+      "lifespan": "10년 이상",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 3
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "저온에 매우 강해 히터 없이도 사육 가능하며, 기압 변화를 감지해 날씨가 흐려지면 활발히 움직이는 것으로 유명합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "zebra-loach": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 150,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1회",
+      "lifespan": "8~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "중급",
+      "color": "#38B6A3",
+      "tips": "다른 보티아속 로치보다 온순한 편이라 커뮤니티 탱크에 비교적 무난하게 어울립니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "giant-danio": {
+      "temp": [
+        22,
+        26
+      ],
+      "ph": [
+        6.0,
+        8.0
+      ],
+      "tankMin": 150,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~7년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "일반 제브라다니오보다 훨씬 크고 활동적이라 폭이 넓은 수조가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "chili-rasbora": {
+      "temp": [
+        23,
+        27
+      ],
+      "ph": [
+        4.0,
+        6.5
+      ],
+      "tankMin": 40,
+      "temperament": "peaceful",
+      "diet": "초소형 먹이",
+      "feeding": "소량씩 자주",
+      "lifespan": "2~3년",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 10
+      },
+      "difficulty": "중급",
+      "color": "#E0714F",
+      "tips": "매우 작은 나노 어종으로 연수·약산성 블랙워터 환경에서 발색이 좋습니다. 입이 작아 초소형 먹이가 필요합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "scissortail-rasbora": {
+      "temp": [
+        22,
+        27
+      ],
+      "ph": [
+        6.0,
+        7.5
+      ],
+      "tankMin": 100,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~8년",
+      "waterLevel": "중~상층",
+      "schooling": {
+        "need": true,
+        "minGroup": 6
+      },
+      "difficulty": "초급",
+      "color": "#38B6A3",
+      "tips": "가위처럼 벌어지는 꼬리지느러미 움직임이 특징이며, 다른 라스보라보다 크게 자라 넓은 수조가 유리합니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low"
+    },
+    "orange-chromide": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        7.0,
+        8.5
+      ],
+      "tankMin": 150,
+      "temperament": "semi-aggressive",
+      "diet": "잡식성",
+      "feeding": "하루 1~2회",
+      "lifespan": "5~8년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "tips": "인도/스리랑카산 시클리드로 기수(brackish) 환경에서도 잘 적응하며, 약간의 소금을 첨가하면 컨디션이 좋아지는 경우가 많습니다.",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "fire-eel": {
+      "temp": [
+        24,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 600,
+      "temperament": "semi-aggressive",
+      "diet": "육식성 (살아있는 먹이 선호)",
+      "feeding": "야간 위주 급여",
+      "lifespan": "8~10년",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "tips": "일반 스파이니일보다 훨씬 크게 자라는 대형종(1m 내외)으로 성장을 고려한 대형 수조가 필요합니다.",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "medium"
+    },
+    "tinfoil-barb": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 470,
+      "temperament": "semi-aggressive",
+      "diet": "초식성 위주 잡식",
+      "feeding": "하루 1~2회",
+      "lifespan": "10년 내외",
+      "waterLevel": "중층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "중급",
+      "color": "#F2A65A",
+      "finNipper": false,
+      "predatory": true,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low",
+      "tips": "30cm 가까이 자라는 대형 바브로 큰 수조가 필요하며, 수초를 뜯어먹고 입에 들어가는 작은 물고기를 먹이로 인식할 수 있습니다."
+    },
+    "iridescent-shark": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 1000,
+      "temperament": "peaceful",
+      "diet": "잡식성",
+      "feeding": "하루 1회",
+      "lifespan": "15~20년",
+      "waterLevel": "중~하층",
+      "schooling": {
+        "need": true,
+        "minGroup": 5
+      },
+      "difficulty": "고급",
+      "color": "#E0714F",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": false,
+      "breedingAggressionOnly": false,
+      "territorial": false,
+      "waterSensitivity": "low",
+      "tips": "판매 시엔 작지만 야생에서 1m 이상, 가정 수조에서도 60cm 이상 자라는 초대형 메기입니다. 어릴 때 예뻐서 충동구매하는 경우가 많지만 대부분의 가정에서 감당하기 어려운 크기까지 자랍니다."
+    },
+    "chinese-algae-eater": {
+      "temp": [
+        22,
+        28
+      ],
+      "ph": [
+        6.5,
+        7.5
+      ],
+      "tankMin": 120,
+      "temperament": "aggressive",
+      "diet": "갈조류, 잡식성",
+      "feeding": "매일",
+      "lifespan": "10년 내외",
+      "waterLevel": "하층",
+      "schooling": {
+        "need": false,
+        "minGroup": 1
+      },
+      "difficulty": "중급",
+      "color": "#E0714F",
+      "finNipper": false,
+      "predatory": false,
+      "sameSpeciesAggressionOnly": true,
+      "breedingAggressionOnly": false,
+      "territorial": true,
+      "waterSensitivity": "low",
+      "tips": "어릴 때는 온순한 갈조류 청소부지만, 성장하면서 다른 물고기의 옆구리를 빨아 점액을 뜯어먹는 공격적인 습성이 생기는 것으로 악명 높습니다. 오토싱클루스와 혼동되지만 다 크면 전혀 다른 어종입니다."
+    }
+  },
+  "species": [
+    {
+      "id": "guppy",
+      "name": "구피",
+      "nameEn": "Guppy",
+      "latin": "Poecilia reticulata",
+      "origin": "중남미 (베네수엘라 등)",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "guppy",
+      "note": null,
+      "genus": "Poecilia"
+    },
+    {
+      "id": "betta",
+      "name": "베타",
+      "nameEn": "Betta / Siamese Fighting Fish",
+      "latin": "Betta splendens",
+      "origin": "동남아시아 (태국, 캄보디아)",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "betta",
+      "note": null,
+      "genus": "Betta"
+    },
+    {
+      "id": "neon-tetra",
+      "name": "네온테트라",
+      "nameEn": "Neon Tetra",
+      "latin": "Paracheirodon innesi",
+      "origin": "남미 아마존 유역",
+      "maxSize": 4,
+      "aliases": [],
+      "groupId": "neon-tetra",
+      "note": null,
+      "genus": "Paracheirodon"
+    },
+    {
+      "id": "corydoras",
+      "name": "코리도라스",
+      "nameEn": "Corydoras Catfish",
+      "latin": "Corydoras aeneus",
+      "origin": "남미 (브라질, 아르헨티나 등)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "corydoras",
+      "note": null,
+      "genus": "Corydoras"
+    },
+    {
+      "id": "angelfish",
+      "name": "엔젤피시",
+      "nameEn": "Angelfish",
+      "latin": "Pterophyllum scalare",
+      "origin": "남미 아마존 유역",
+      "maxSize": 15,
+      "aliases": [],
+      "groupId": "angelfish",
+      "note": null,
+      "genus": "Pterophyllum"
+    },
+    {
+      "id": "zebra-danio",
+      "name": "제브라다니오",
+      "nameEn": "Zebra Danio",
+      "latin": "Danio rerio",
+      "origin": "남아시아 (인도, 방글라데시)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "zebra-danio",
+      "note": null,
+      "genus": "Danio"
+    },
+    {
+      "id": "platy",
+      "name": "플래티",
+      "nameEn": "Platy",
+      "latin": "Xiphophorus maculatus",
+      "origin": "중미 (멕시코, 과테말라)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "platy",
+      "note": null,
+      "genus": "Xiphophorus"
+    },
+    {
+      "id": "molly",
+      "name": "몰리",
+      "nameEn": "Molly",
+      "latin": "Poecilia sphenops",
+      "origin": "중미",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "molly",
+      "note": null,
+      "genus": "Poecilia"
+    },
+    {
+      "id": "swordtail",
+      "name": "소드테일",
+      "nameEn": "Swordtail",
+      "latin": "Xiphophorus hellerii",
+      "origin": "중미",
+      "maxSize": 12,
+      "aliases": [],
+      "groupId": "swordtail",
+      "note": null,
+      "genus": "Xiphophorus"
+    },
+    {
+      "id": "cardinal-tetra",
+      "name": "카디널테트라",
+      "nameEn": "Cardinal Tetra",
+      "latin": "Paracheirodon axelrodi",
+      "origin": "남미 (오리노코, 네그로강)",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "cardinal-tetra",
+      "note": null,
+      "genus": "Paracheirodon"
+    },
+    {
+      "id": "black-skirt-tetra",
+      "name": "블랙스커트테트라",
+      "nameEn": "Black Skirt Tetra",
+      "latin": "Gymnocorymbus ternetzi",
+      "origin": "남미 (브라질, 파라과이)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "black-skirt-tetra",
+      "note": null,
+      "genus": "Gymnocorymbus"
+    },
+    {
+      "id": "cherry-barb",
+      "name": "체리바브",
+      "nameEn": "Cherry Barb",
+      "latin": "Puntius titteya",
+      "origin": "스리랑카",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "cherry-barb",
+      "note": null,
+      "genus": "Puntius"
+    },
+    {
+      "id": "tiger-barb",
+      "name": "타이거바브",
+      "nameEn": "Tiger Barb",
+      "latin": "Puntius tetrazona",
+      "origin": "동남아시아 (인도네시아)",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "tiger-barb",
+      "note": null,
+      "genus": "Puntius"
+    },
+    {
+      "id": "harlequin-rasbora",
+      "name": "할리퀸라스보라",
+      "nameEn": "Harlequin Rasbora",
+      "latin": "Trigonostigma heteromorpha",
+      "origin": "동남아시아",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "harlequin-rasbora",
+      "note": null,
+      "genus": "Trigonostigma"
+    },
+    {
+      "id": "kuhli-loach",
+      "name": "쿨리로치",
+      "nameEn": "Kuhli Loach",
+      "latin": "Pangio kuhlii",
+      "origin": "동남아시아",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "kuhli-loach",
+      "note": null,
+      "genus": "Pangio"
+    },
+    {
+      "id": "otocinclus",
+      "name": "오토싱클루스",
+      "nameEn": "Otocinclus",
+      "latin": "Otocinclus vittatus",
+      "origin": "남미 (브라질)",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "otocinclus",
+      "note": null,
+      "genus": "Otocinclus"
+    },
+    {
+      "id": "bristlenose-pleco",
+      "name": "브리슬노즈플레코",
+      "nameEn": "Bristlenose Pleco",
+      "latin": "Ancistrus cirrhosus",
+      "origin": "남미",
+      "maxSize": 15,
+      "aliases": [],
+      "groupId": "bristlenose-pleco",
+      "note": null,
+      "genus": "Ancistrus"
+    },
+    {
+      "id": "common-pleco",
+      "name": "커먼플레코",
+      "nameEn": "Common Pleco",
+      "latin": "Pterygoplichthys pardalis",
+      "origin": "남미",
+      "maxSize": 45,
+      "aliases": [],
+      "groupId": "common-pleco",
+      "note": null,
+      "genus": "Pterygoplichthys"
+    },
+    {
+      "id": "dwarf-gourami",
+      "name": "드워프구라미",
+      "nameEn": "Dwarf Gourami",
+      "latin": "Trichogaster lalius",
+      "origin": "남아시아 (인도)",
+      "maxSize": 9,
+      "aliases": [
+        "로얄레드드워프구라미",
+        "코발트블루드워프구라미",
+        "네온드워프구라미"
+      ],
+      "groupId": "dwarf-gourami",
+      "note": null,
+      "genus": "Trichogaster"
+    },
+    {
+      "id": "pearl-gourami",
+      "name": "펄구라미",
+      "nameEn": "Pearl Gourami",
+      "latin": "Trichopodus leerii",
+      "origin": "동남아시아",
+      "maxSize": 12,
+      "aliases": [],
+      "groupId": "pearl-gourami",
+      "note": null,
+      "genus": "Trichopodus"
+    },
+    {
+      "id": "honey-gourami",
+      "name": "허니구라미",
+      "nameEn": "Honey Gourami",
+      "latin": "Trichogaster chuna",
+      "origin": "남아시아 (인도, 방글라데시)",
+      "maxSize": 5,
+      "aliases": [
+        "선셋허니구라미",
+        "골드파이어허니구라미",
+        "골든허니구라미"
+      ],
+      "groupId": "honey-gourami",
+      "note": null,
+      "genus": "Trichogaster"
+    },
+    {
+      "id": "kissing-gourami",
+      "name": "키싱구라미",
+      "nameEn": "Kissing Gourami",
+      "latin": "Helostoma temminckii",
+      "origin": "동남아시아",
+      "maxSize": 30,
+      "aliases": [
+        "핑크키싱구라미"
+      ],
+      "groupId": "kissing-gourami",
+      "note": null,
+      "genus": "Helostoma"
+    },
+    {
+      "id": "discus",
+      "name": "디스커스",
+      "nameEn": "Discus",
+      "latin": "Symphysodon spp.",
+      "origin": "남미 (아마존)",
+      "maxSize": 20,
+      "aliases": [],
+      "groupId": "discus",
+      "note": null,
+      "genus": "Symphysodon"
+    },
+    {
+      "id": "german-blue-ram",
+      "name": "저먼블루람",
+      "nameEn": "German Blue Ram",
+      "latin": "Mikrogeophagus ramirezi",
+      "origin": "남미 (베네수엘라, 콜롬비아)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "german-blue-ram",
+      "note": null,
+      "genus": "Mikrogeophagus"
+    },
+    {
+      "id": "kribensis",
+      "name": "크립엔시스",
+      "nameEn": "Kribensis",
+      "latin": "Pelvicachromis pulcher",
+      "origin": "서아프리카 (나이지리아, 카메룬)",
+      "maxSize": 9,
+      "aliases": [],
+      "groupId": "kribensis",
+      "note": null,
+      "genus": "Pelvicachromis"
+    },
+    {
+      "id": "oscar",
+      "name": "오스카",
+      "nameEn": "Oscar",
+      "latin": "Astronotus ocellatus",
+      "origin": "남미 (아마존)",
+      "maxSize": 35,
+      "aliases": [],
+      "groupId": "oscar",
+      "note": null,
+      "genus": "Astronotus"
+    },
+    {
+      "id": "firemouth-cichlid",
+      "name": "파이어마우스시클리드",
+      "nameEn": "Firemouth Cichlid",
+      "latin": "Thorichthys meeki",
+      "origin": "중미",
+      "maxSize": 15,
+      "aliases": [],
+      "groupId": "firemouth-cichlid",
+      "note": null,
+      "genus": "Thorichthys"
+    },
+    {
+      "id": "convict-cichlid",
+      "name": "컨빅트시클리드",
+      "nameEn": "Convict Cichlid",
+      "latin": "Amatitlania nigrofasciata",
+      "origin": "중미",
+      "maxSize": 12,
+      "aliases": [],
+      "groupId": "convict-cichlid",
+      "note": null,
+      "genus": "Amatitlania"
+    },
+    {
+      "id": "rainbow-shark",
+      "name": "레인보우샤크",
+      "nameEn": "Rainbow Shark",
+      "latin": "Epalzeorhynchos frenatum",
+      "origin": "동남아시아",
+      "maxSize": 15,
+      "aliases": [],
+      "groupId": "rainbow-shark",
+      "note": null,
+      "genus": "Epalzeorhynchos"
+    },
+    {
+      "id": "bala-shark",
+      "name": "발라샤크",
+      "nameEn": "Bala Shark",
+      "latin": "Balantiocheilos melanopterus",
+      "origin": "동남아시아",
+      "maxSize": 35,
+      "aliases": [
+        "실버샤크"
+      ],
+      "groupId": "bala-shark",
+      "note": null,
+      "genus": "Balantiocheilos"
+    },
+    {
+      "id": "rosy-barb",
+      "name": "로지바브",
+      "nameEn": "Rosy Barb",
+      "latin": "Pethia conchonius",
+      "origin": "남아시아 (인도)",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "rosy-barb",
+      "note": null,
+      "genus": "Pethia"
+    },
+    {
+      "id": "endlers-livebearer",
+      "name": "엔들러구피",
+      "nameEn": "Endler's Livebearer",
+      "latin": "Poecilia wingei",
+      "origin": "남미 (베네수엘라)",
+      "maxSize": 3.5,
+      "aliases": [],
+      "groupId": "endlers-livebearer",
+      "note": null,
+      "genus": "Poecilia"
+    },
+    {
+      "id": "celestial-pearl-danio",
+      "name": "은하수라스보라",
+      "nameEn": "Celestial Pearl Danio (Galaxy Rasbora)",
+      "latin": "Danio margaritatus",
+      "origin": "미얀마",
+      "maxSize": 2.5,
+      "aliases": [],
+      "groupId": "celestial-pearl-danio",
+      "note": null,
+      "genus": "Danio"
+    },
+    {
+      "id": "white-cloud-mountain-minnow",
+      "name": "화이트클라우드마운틴미노우",
+      "nameEn": "White Cloud Mountain Minnow",
+      "latin": "Tanichthys albonubes",
+      "origin": "중국",
+      "maxSize": 4,
+      "aliases": [],
+      "groupId": "white-cloud-mountain-minnow",
+      "note": null,
+      "genus": "Tanichthys"
+    },
+    {
+      "id": "glowlight-tetra",
+      "name": "글로라이트테트라",
+      "nameEn": "Glowlight Tetra",
+      "latin": "Hemigrammus erythrozonus",
+      "origin": "남미 (가이아나)",
+      "maxSize": 4,
+      "aliases": [],
+      "groupId": "glowlight-tetra",
+      "note": null,
+      "genus": "Hemigrammus"
+    },
+    {
+      "id": "ember-tetra",
+      "name": "엠버테트라",
+      "nameEn": "Ember Tetra",
+      "latin": "Hyphessobrycon amandae",
+      "origin": "남미 (브라질)",
+      "maxSize": 2,
+      "aliases": [],
+      "groupId": "ember-tetra",
+      "note": null,
+      "genus": "Hyphessobrycon"
+    },
+    {
+      "id": "rummynose-tetra",
+      "name": "럼미노즈테트라",
+      "nameEn": "Rummynose Tetra",
+      "latin": "Hemigrammus rhodostomus",
+      "origin": "남미",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "rummynose-tetra",
+      "note": null,
+      "genus": "Hemigrammus"
+    },
+    {
+      "id": "congo-tetra",
+      "name": "콩고테트라",
+      "nameEn": "Congo Tetra",
+      "latin": "Phenacogrammus interruptus",
+      "origin": "중앙아프리카 (콩고)",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "congo-tetra",
+      "note": null,
+      "genus": "Phenacogrammus"
+    },
+    {
+      "id": "silver-dollar",
+      "name": "실버달러",
+      "nameEn": "Silver Dollar",
+      "latin": "Metynnis argenteus",
+      "origin": "남미",
+      "maxSize": 15,
+      "aliases": [],
+      "groupId": "silver-dollar",
+      "note": null,
+      "genus": "Metynnis"
+    },
+    {
+      "id": "clown-loach",
+      "name": "클라운로치",
+      "nameEn": "Clown Loach",
+      "latin": "Chromobotia macracanthus",
+      "origin": "동남아시아 (수마트라, 보르네오)",
+      "maxSize": 30,
+      "aliases": [],
+      "groupId": "clown-loach",
+      "note": null,
+      "genus": "Chromobotia"
+    },
+    {
+      "id": "yoyo-loach",
+      "name": "요요로치",
+      "nameEn": "Yoyo Loach",
+      "latin": "Botia almorhae",
+      "origin": "남아시아 (인도)",
+      "maxSize": 12,
+      "aliases": [],
+      "groupId": "yoyo-loach",
+      "note": null,
+      "genus": "Botia"
+    },
+    {
+      "id": "flying-fox",
+      "name": "플라잉폭스",
+      "nameEn": "Flying Fox",
+      "latin": "Epalzeorhynchos kalopterus",
+      "origin": "동남아시아",
+      "maxSize": 13,
+      "aliases": [],
+      "groupId": "flying-fox",
+      "note": null,
+      "genus": "Epalzeorhynchos"
+    },
+    {
+      "id": "siamese-algae-eater",
+      "name": "시아미즈알지이터",
+      "nameEn": "Siamese Algae Eater",
+      "latin": "Crossocheilus oblongus",
+      "origin": "동남아시아",
+      "maxSize": 14,
+      "aliases": [],
+      "groupId": "siamese-algae-eater",
+      "note": null,
+      "genus": "Crossocheilus"
+    },
+    {
+      "id": "bolivian-ram",
+      "name": "볼리비안람",
+      "nameEn": "Bolivian Ram",
+      "latin": "Mikrogeophagus altispinosus",
+      "origin": "남미 (볼리비아, 브라질)",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "bolivian-ram",
+      "note": null,
+      "genus": "Mikrogeophagus"
+    },
+    {
+      "id": "jack-dempsey",
+      "name": "잭뎀시",
+      "nameEn": "Jack Dempsey",
+      "latin": "Rocio octofasciata",
+      "origin": "중미",
+      "maxSize": 25,
+      "aliases": [],
+      "groupId": "jack-dempsey",
+      "note": null,
+      "genus": "Rocio"
+    },
+    {
+      "id": "green-terror",
+      "name": "그린테러",
+      "nameEn": "Green Terror",
+      "latin": "Andinoacara rivulatus",
+      "origin": "남미 (에콰도르, 페루)",
+      "maxSize": 30,
+      "aliases": [],
+      "groupId": "green-terror",
+      "note": null,
+      "genus": "Andinoacara"
+    },
+    {
+      "id": "blue-acara",
+      "name": "블루아카라",
+      "nameEn": "Blue Acara",
+      "latin": "Andinoacara pulcher",
+      "origin": "남미",
+      "maxSize": 18,
+      "aliases": [],
+      "groupId": "blue-acara",
+      "note": null,
+      "genus": "Andinoacara"
+    },
+    {
+      "id": "severum",
+      "name": "세베룸",
+      "nameEn": "Severum",
+      "latin": "Heros severus",
+      "origin": "남미 (아마존)",
+      "maxSize": 20,
+      "aliases": [],
+      "groupId": "severum",
+      "note": null,
+      "genus": "Heros"
+    },
+    {
+      "id": "paradise-fish",
+      "name": "파라다이스피시",
+      "nameEn": "Paradise Fish",
+      "latin": "Macropodus opercularis",
+      "origin": "동아시아 (중국, 베트남)",
+      "maxSize": 8,
+      "aliases": [
+        "레드파라다이스",
+        "알비노파라다이스",
+        "그린파라다이스",
+        "블루파라다이스"
+      ],
+      "groupId": "paradise-fish",
+      "note": null,
+      "genus": "Macropodus"
+    },
+    {
+      "id": "boesemani-rainbowfish",
+      "name": "보스마니레인보우피시",
+      "nameEn": "Boesemani Rainbowfish",
+      "latin": "Melanotaenia boesemani",
+      "origin": "인도네시아 (파푸아)",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "boesemani-rainbowfish",
+      "note": null,
+      "genus": "Melanotaenia"
+    },
+    {
+      "id": "zebra-cichlid",
+      "name": "제브라 시클리드",
+      "nameEn": "Zebra Mbuna",
+      "latin": "Maylandia zebra",
+      "origin": "아프리카 말라위호",
+      "maxSize": 12,
+      "aliases": [
+        "아이스블루제브라",
+        "코발트블루제브라",
+        "오렌지제브라",
+        "알비노제브라"
+      ],
+      "groupId": "mbuna",
+      "note": null,
+      "genus": "Maylandia"
+    },
+    {
+      "id": "demasoni",
+      "name": "데마소니",
+      "nameEn": "Demasoni Cichlid",
+      "latin": "Pseudotropheus demasoni",
+      "origin": "아프리카 말라위호",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "mbuna",
+      "note": "음부나 중에서도 특히 공격적이라 최소 12마리 이상 대규모 무리 사육을 권장합니다.",
+      "genus": "Pseudotropheus"
+    },
+    {
+      "id": "johanni",
+      "name": "요하니",
+      "nameEn": "Johanni Cichlid",
+      "latin": "Melanochromis johannii",
+      "origin": "아프리카 말라위호",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "mbuna",
+      "note": null,
+      "genus": "Melanochromis"
+    },
+    {
+      "id": "peacock-cichlid",
+      "name": "피콕 시클리드",
+      "nameEn": "Peacock Cichlid",
+      "latin": "Aulonocara sp.",
+      "origin": "아프리카 말라위호",
+      "maxSize": 15,
+      "aliases": [
+        "바엔스키피콕",
+        "블루니아사피콕",
+        "골든레드아이피콕"
+      ],
+      "groupId": "peacock",
+      "note": null,
+      "genus": "Aulonocara"
+    },
+    {
+      "id": "hap-cichlid",
+      "name": "합 시클리드",
+      "nameEn": "Hap Cichlid",
+      "latin": "Nimbochromis / Copadichromis sp.",
+      "origin": "아프리카 말라위호",
+      "maxSize": 20,
+      "aliases": [
+        "기린시클리드",
+        "베누스투스"
+      ],
+      "groupId": "hap",
+      "note": null,
+      "genus": "Nimbochromis"
+    },
+    {
+      "id": "frontosa",
+      "name": "프론토사",
+      "nameEn": "Frontosa Cichlid",
+      "latin": "Cyphotilapia frontosa",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 35,
+      "aliases": [
+        "레드프론토사"
+      ],
+      "groupId": "frontosa",
+      "note": null,
+      "genus": "Cyphotilapia"
+    },
+    {
+      "id": "tropheus-moorii",
+      "name": "트로피우스 모오리",
+      "nameEn": "Tropheus Moorii",
+      "latin": "Tropheus moorii",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 14,
+      "aliases": [
+        "불루포인트",
+        "몰리로"
+      ],
+      "groupId": "tropheus",
+      "note": null,
+      "genus": "Tropheus"
+    },
+    {
+      "id": "tropheus-duboisi",
+      "name": "트로피우스 두보이시",
+      "nameEn": "Tropheus Duboisi",
+      "latin": "Tropheus duboisi",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 12,
+      "aliases": [],
+      "groupId": "tropheus",
+      "note": null,
+      "genus": "Tropheus"
+    },
+    {
+      "id": "brichardi",
+      "name": "브리차디",
+      "nameEn": "Brichardi / Fairy Cichlid",
+      "latin": "Neolamprologus brichardi",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 10,
+      "aliases": [
+        "페어리시클리드"
+      ],
+      "groupId": "tanganyika-shell-dweller",
+      "note": null,
+      "genus": "Neolamprologus"
+    },
+    {
+      "id": "julidochromis",
+      "name": "줄리도크로미스",
+      "nameEn": "Julidochromis",
+      "latin": "Julidochromis ornatus",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 10,
+      "aliases": [
+        "마스크드시클리드"
+      ],
+      "groupId": "tanganyika-shell-dweller",
+      "note": null,
+      "genus": "Julidochromis"
+    },
+    {
+      "id": "leleupi",
+      "name": "레룹피",
+      "nameEn": "Lemon Cichlid",
+      "latin": "Neolamprologus leleupi",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "tanganyika-shell-dweller",
+      "note": null,
+      "genus": "Neolamprologus"
+    },
+    {
+      "id": "calvus",
+      "name": "칼부스",
+      "nameEn": "Altolamprologus Calvus",
+      "latin": "Altolamprologus calvus",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 14,
+      "aliases": [
+        "블랙콩고칼부스"
+      ],
+      "groupId": "altolamprologus",
+      "note": null,
+      "genus": "Altolamprologus"
+    },
+    {
+      "id": "three-spot-gourami-sp",
+      "name": "쓰리스팟 구라미",
+      "nameEn": "Three Spot Gourami",
+      "latin": "Trichopodus trichopterus",
+      "origin": "동남아시아",
+      "maxSize": 15,
+      "aliases": [
+        "골드구라미",
+        "오팔린구라미",
+        "플래티넘구라미"
+      ],
+      "groupId": "three-spot-gourami",
+      "note": null,
+      "genus": "Trichopodus"
+    },
+    {
+      "id": "moonlight-gourami-sp",
+      "name": "문라이트 구라미",
+      "nameEn": "Moonlight Gourami",
+      "latin": "Trichopodus microlepis",
+      "origin": "동남아시아",
+      "maxSize": 13,
+      "aliases": [],
+      "groupId": "moonlight-gourami",
+      "note": null,
+      "genus": "Trichopodus"
+    },
+    {
+      "id": "snakeskin-gourami-sp",
+      "name": "스네이크스킨 구라미",
+      "nameEn": "Snakeskin Gourami",
+      "latin": "Trichopodus pectoralis",
+      "origin": "동남아시아",
+      "maxSize": 25,
+      "aliases": [],
+      "groupId": "snakeskin-gourami",
+      "note": null,
+      "genus": "Trichopodus"
+    },
+    {
+      "id": "giant-gourami-sp",
+      "name": "자이언트 구라미",
+      "nameEn": "Giant Gourami",
+      "latin": "Osphronemus goramy",
+      "origin": "동남아시아",
+      "maxSize": 60,
+      "aliases": [
+        "레드테일자이언트구라미"
+      ],
+      "groupId": "giant-gourami",
+      "note": null,
+      "genus": "Osphronemus"
+    },
+    {
+      "id": "chocolate-gourami-sp",
+      "name": "초콜릿 구라미",
+      "nameEn": "Chocolate Gourami",
+      "latin": "Sphaerichthys osphromenoides",
+      "origin": "동남아시아 (수마트라, 보르네오)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "chocolate-gourami",
+      "note": null,
+      "genus": "Sphaerichthys"
+    },
+    {
+      "id": "vaillants-chocolate-gourami",
+      "name": "바이언트 초콜릿 구라미",
+      "nameEn": "Vaillant's Chocolate (Samurai) Gourami",
+      "latin": "Sphaerichthys vaillanti",
+      "origin": "동남아시아 (보르네오)",
+      "maxSize": 8,
+      "aliases": [
+        "사무라이구라미"
+      ],
+      "groupId": "chocolate-gourami",
+      "note": null,
+      "genus": "Sphaerichthys"
+    },
+    {
+      "id": "sparkling-gourami-sp",
+      "name": "스파클링 구라미",
+      "nameEn": "Sparkling Gourami",
+      "latin": "Trichopsis pumila",
+      "origin": "동남아시아",
+      "maxSize": 4,
+      "aliases": [],
+      "groupId": "trichopsis-gourami",
+      "note": null,
+      "genus": "Trichopsis"
+    },
+    {
+      "id": "croaking-gourami-sp",
+      "name": "크로킹 구라미",
+      "nameEn": "Croaking Gourami",
+      "latin": "Trichopsis vittata",
+      "origin": "동남아시아",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "trichopsis-gourami",
+      "note": null,
+      "genus": "Trichopsis"
+    },
+    {
+      "id": "licorice-gourami-sp",
+      "name": "리코리스 구라미",
+      "nameEn": "Deissner's Licorice Gourami",
+      "latin": "Parosphromenus deissneri",
+      "origin": "동남아시아 (수마트라)",
+      "maxSize": 4,
+      "aliases": [],
+      "groupId": "licorice-gourami",
+      "note": null,
+      "genus": "Parosphromenus"
+    },
+    {
+      "id": "thicklip-gourami-sp",
+      "name": "싱크립 구라미",
+      "nameEn": "Orange Thicklip Gourami",
+      "latin": "Trichogaster labiosa",
+      "origin": "동남아시아 (미얀마)",
+      "maxSize": 9,
+      "aliases": [],
+      "groupId": "thicklip-gourami",
+      "note": null,
+      "genus": "Trichogaster"
+    },
+    {
+      "id": "badis-sp",
+      "name": "스칼렛 바디스",
+      "nameEn": "Scarlet/Rainbow Badis",
+      "latin": "Dario dario",
+      "origin": "남아시아 (인도)",
+      "maxSize": 2.5,
+      "aliases": [],
+      "groupId": "badis",
+      "note": null,
+      "genus": "Dario"
+    },
+    {
+      "id": "amazon-leaf-fish-sp",
+      "name": "아마존 리프피시",
+      "nameEn": "Amazon Leaf Fish",
+      "latin": "Monocirrhus polyacanthus",
+      "origin": "남미 (아마존)",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "leaf-fish",
+      "note": null,
+      "genus": "Monocirrhus"
+    },
+    {
+      "id": "sumatran-leaf-fish-sp",
+      "name": "수마트란 리프피시",
+      "nameEn": "Sumatran Leaf Fish",
+      "latin": "Nandus sp.",
+      "origin": "동남아시아 (수마트라)",
+      "maxSize": 15,
+      "aliases": [],
+      "groupId": "leaf-fish",
+      "note": null,
+      "genus": "Nandus"
+    },
+    {
+      "id": "african-leaf-fish-sp",
+      "name": "아프리칸 리프피시",
+      "nameEn": "African Leaf Fish",
+      "latin": "Polycentropsis abbreviata",
+      "origin": "서아프리카",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "leaf-fish",
+      "note": null,
+      "genus": "Polycentropsis"
+    },
+    {
+      "id": "datnoid-sp",
+      "name": "보르네오 타이거",
+      "nameEn": "Borneo Tiger (Datnoid)",
+      "latin": "Datnioides microlepis",
+      "origin": "동남아시아 (보르네오)",
+      "maxSize": 40,
+      "aliases": [],
+      "groupId": "datnoid",
+      "note": null,
+      "genus": "Datnioides"
+    },
+    {
+      "id": "leopard-ctenopoma-sp",
+      "name": "레오파드 크테노포마",
+      "nameEn": "Leopard Ctenopoma/Bushfish",
+      "latin": "Ctenopoma acutirostre",
+      "origin": "중앙아프리카 (콩고)",
+      "maxSize": 15,
+      "aliases": [],
+      "groupId": "leopard-ctenopoma",
+      "note": null,
+      "genus": "Ctenopoma"
+    },
+    {
+      "id": "red-empress",
+      "name": "레드엠프레스",
+      "nameEn": "Red Empress",
+      "latin": "Protomelas taeniolatus",
+      "genus": "Protomelas",
+      "origin": "아프리카 말라위호",
+      "maxSize": 18,
+      "aliases": [],
+      "groupId": "hap",
+      "note": "피콕 시클리드(Aulonocara속)와 이름이 비슷하고 서식지도 같은 말라위호이지만 분류학적으로 다른 속(Protomelas)입니다. 피콕보다 크고 영역 수호 본능이 강해 좁은 수조에서는 피콕을 괴롭힐 수 있습니다."
+    },
+    {
+      "id": "brownae-hap",
+      "name": "브라우니합 (확인필요)",
+      "nameEn": "Brownae / Cherry Red Hap",
+      "latin": "확인 필요 (genus 미확정)",
+      "genus": "확인 필요",
+      "origin": "아프리카 말라위호",
+      "maxSize": 18,
+      "aliases": [],
+      "groupId": "hap",
+      "note": "유통명만으로는 정확한 학명/속을 확정하지 못했습니다. 기린시클리드(Nimbochromis venustus)와 다른 속일 가능성이 있어 별도 항목으로 분리했습니다. 실제 구매 전 판매처에 정확한 학명을 확인하시는 걸 권장합니다."
+    },
+    {
+      "id": "tiger-paradise-fish",
+      "name": "타이거 파라다이스 (확인필요)",
+      "nameEn": "Tiger Paradise Fish",
+      "latin": "확인 필요",
+      "genus": "확인 필요",
+      "origin": "동아시아",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "paradise-fish",
+      "note": "일반 파라다이스피시(Macropodus opercularis)의 색상형인지, 근연종인 블랙파라다이스피시(Macropodus concolor)를 가리키는 유통명인지 확정하지 못했습니다. 구매 전 정확한 학명을 확인하세요."
+    },
+    {
+      "id": "black-widow-frontosa",
+      "name": "블랙위도우 프론토사 (확인필요)",
+      "nameEn": "Black Widow Frontosa",
+      "latin": "확인 필요",
+      "genus": "확인 필요",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 35,
+      "aliases": [],
+      "groupId": "frontosa",
+      "note": "프론토사(Cyphotilapia frontosa)의 지역 변이인지, 근연종인 Cyphotilapia gibberosa를 가리키는 유통명인지 확정하지 못했습니다. 구매 전 정확한 학명을 확인하세요."
+    },
+    {
+      "id": "synodontis-ocellifer-sp",
+      "name": "오셀리퍼 신오돈티스",
+      "nameEn": "Synodontis Ocellifer",
+      "latin": "Synodontis ocellifer",
+      "genus": "Synodontis",
+      "origin": "서아프리카",
+      "maxSize": 20,
+      "aliases": [],
+      "groupId": "synodontis-general",
+      "note": null
+    },
+    {
+      "id": "synodontis-cuckoo-sp",
+      "name": "쿠쿠 신오돈티스",
+      "nameEn": "Synodontis Cuckoo Catfish",
+      "latin": "Synodontis multipunctatus",
+      "genus": "Synodontis",
+      "origin": "아프리카 탕가니카호",
+      "maxSize": 28,
+      "aliases": [],
+      "groupId": "synodontis-cuckoo",
+      "note": null
+    },
+    {
+      "id": "upside-down-catfish-sp",
+      "name": "업사이드다운 캣피시",
+      "nameEn": "Upside-down Catfish",
+      "latin": "Synodontis nigriventris",
+      "genus": "Synodontis",
+      "origin": "중앙아프리카 (콩고)",
+      "maxSize": 9,
+      "aliases": [],
+      "groupId": "upside-down-catfish",
+      "note": null
+    },
+    {
+      "id": "pictus-catfish-sp",
+      "name": "픽투스 캣피시",
+      "nameEn": "Pictus Catfish",
+      "latin": "Pimelodus pictus",
+      "genus": "Pimelodus",
+      "origin": "남미",
+      "maxSize": 12,
+      "aliases": [],
+      "groupId": "pictus-catfish",
+      "note": null
+    },
+    {
+      "id": "glass-catfish-sp",
+      "name": "글래스 캣피시",
+      "nameEn": "Glass Catfish",
+      "latin": "Kryptopterus vitreolus",
+      "genus": "Kryptopterus",
+      "origin": "동남아시아",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "glass-catfish",
+      "note": null
+    },
+    {
+      "id": "whiptail-catfish-sp",
+      "name": "윕테일 캣피시",
+      "nameEn": "Whiptail Catfish",
+      "latin": "Rineloricaria sp.",
+      "genus": "Rineloricaria",
+      "origin": "남미",
+      "maxSize": 15,
+      "aliases": [
+        "파로웰라"
+      ],
+      "groupId": "whiptail-catfish",
+      "note": null
+    },
+    {
+      "id": "hillstream-loach-sp",
+      "name": "힐스트림 로치",
+      "nameEn": "Hillstream Loach",
+      "latin": "Sewellia lineolata",
+      "genus": "Sewellia",
+      "origin": "동남아시아 (베트남)",
+      "maxSize": 7,
+      "aliases": [
+        "보르네오 서커"
+      ],
+      "groupId": "hillstream-loach",
+      "note": null
+    },
+    {
+      "id": "clown-pleco-sp",
+      "name": "클라운 플레코",
+      "nameEn": "Clown Pleco",
+      "latin": "Panaqolus maccus",
+      "genus": "Panaqolus",
+      "origin": "남미 (베네수엘라)",
+      "maxSize": 9,
+      "aliases": [],
+      "groupId": "clown-pleco",
+      "note": null
+    },
+    {
+      "id": "royal-pleco-sp",
+      "name": "로얄 플레코",
+      "nameEn": "Royal Pleco",
+      "latin": "Panaque nigrolineatus",
+      "genus": "Panaque",
+      "origin": "남미",
+      "maxSize": 43,
+      "aliases": [],
+      "groupId": "royal-pleco",
+      "note": null
+    },
+    {
+      "id": "rubber-pleco-sp",
+      "name": "러버 플레코",
+      "nameEn": "Rubber Pleco",
+      "latin": "Chaetostoma sp.",
+      "genus": "Chaetostoma",
+      "origin": "남미",
+      "maxSize": 13,
+      "aliases": [],
+      "groupId": "rubber-pleco",
+      "note": null
+    },
+    {
+      "id": "talking-catfish-sp",
+      "name": "토킹 캣피시 (라파엘)",
+      "nameEn": "Talking / Raphael Catfish",
+      "latin": "Platydoras armatulus",
+      "genus": "Platydoras",
+      "origin": "남미 아마존",
+      "maxSize": 20,
+      "aliases": [
+        "라파엘캣피시"
+      ],
+      "groupId": "talking-catfish",
+      "note": null
+    },
+    {
+      "id": "pea-puffer-sp",
+      "name": "피퍼(드워프)퍼퍼",
+      "nameEn": "Pea Puffer / Dwarf Freshwater Puffer",
+      "latin": "Carinotetraodon travancoricus",
+      "genus": "Carinotetraodon",
+      "origin": "남인도",
+      "maxSize": 2.5,
+      "aliases": [
+        "드워프퍼퍼"
+      ],
+      "groupId": "puffer-dwarf",
+      "note": null
+    },
+    {
+      "id": "green-puffer-sp",
+      "name": "그린 퍼퍼",
+      "nameEn": "Green Puffer",
+      "latin": "Dichotomyctere fluviatilis",
+      "genus": "Dichotomyctere",
+      "origin": "동남아시아 기수역",
+      "maxSize": 17,
+      "aliases": [],
+      "groupId": "puffer-brackish",
+      "note": null
+    },
+    {
+      "id": "figure-eight-puffer-sp",
+      "name": "피겨에이트 퍼퍼",
+      "nameEn": "Figure Eight Puffer",
+      "latin": "Dichotomyctere ocellatus",
+      "genus": "Dichotomyctere",
+      "origin": "동남아시아 기수역",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "puffer-brackish",
+      "note": null
+    },
+    {
+      "id": "fahaka-puffer-sp",
+      "name": "파하카 퍼퍼",
+      "nameEn": "Fahaka Puffer",
+      "latin": "Tetraodon lineatus",
+      "genus": "Tetraodon",
+      "origin": "아프리카 나일강 유역",
+      "maxSize": 45,
+      "aliases": [],
+      "groupId": "puffer-giant-freshwater",
+      "note": null
+    },
+    {
+      "id": "clown-killifish-sp",
+      "name": "클라운 킬리피시",
+      "nameEn": "Clown Killifish",
+      "latin": "Epiplatys annulatus",
+      "genus": "Epiplatys",
+      "origin": "서아프리카",
+      "maxSize": 3.5,
+      "aliases": [],
+      "groupId": "killifish-clown",
+      "note": null
+    },
+    {
+      "id": "nothobranchius-sp",
+      "name": "노토브란키우스",
+      "nameEn": "Nothobranchius Killifish",
+      "latin": "Nothobranchius rachovii",
+      "genus": "Nothobranchius",
+      "origin": "동아프리카 (모잠비크)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "killifish-annual",
+      "note": null
+    },
+    {
+      "id": "western-rainbowfish-sp",
+      "name": "웨스턴 레인보우피시",
+      "nameEn": "Western Rainbowfish",
+      "latin": "Melanotaenia australis",
+      "genus": "Melanotaenia",
+      "origin": "호주",
+      "maxSize": 12,
+      "aliases": [],
+      "groupId": "rainbowfish-melanotaenia",
+      "note": null
+    },
+    {
+      "id": "blue-lacustris-rainbowfish-sp",
+      "name": "블루 라쿠스트리스 레인보우피시",
+      "nameEn": "Blue Lacustris Rainbowfish",
+      "latin": "Melanotaenia lacustris",
+      "genus": "Melanotaenia",
+      "origin": "파푸아뉴기니",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "rainbowfish-melanotaenia",
+      "note": null
+    },
+    {
+      "id": "red-striped-rainbowfish-sp",
+      "name": "레드스트라이프 레인보우피시",
+      "nameEn": "Red Striped Rainbowfish",
+      "latin": "Melanotaenia rubrostriata",
+      "genus": "Melanotaenia",
+      "origin": "파푸아뉴기니",
+      "maxSize": 16,
+      "aliases": [],
+      "groupId": "rainbowfish-melanotaenia",
+      "note": null
+    },
+    {
+      "id": "papuan-rainbowfish-sp",
+      "name": "파푸안 레인보우피시",
+      "nameEn": "Papuan Rainbowfish",
+      "latin": "Melanotaenia papuae",
+      "genus": "Melanotaenia",
+      "origin": "파푸아뉴기니",
+      "maxSize": 9,
+      "aliases": [],
+      "groupId": "rainbowfish-melanotaenia",
+      "note": null
+    },
+    {
+      "id": "celebes-rainbowfish-sp",
+      "name": "셀레베스 레인보우피시",
+      "nameEn": "Celebes Rainbowfish",
+      "latin": "Marosatherina ladigesi",
+      "genus": "Marosatherina",
+      "origin": "인도네시아 (술라웨시)",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "rainbowfish-melanotaenia",
+      "note": null
+    },
+    {
+      "id": "threadfin-rainbowfish-sp2",
+      "name": "쓰레드핀 레인보우피시",
+      "nameEn": "Threadfin Rainbowfish",
+      "latin": "Iriatherina werneri",
+      "genus": "Iriatherina",
+      "origin": "호주, 파푸아뉴기니",
+      "maxSize": 4.5,
+      "aliases": [],
+      "groupId": "rainbowfish-nano-blueeye",
+      "note": null
+    },
+    {
+      "id": "pacific-blueeye-rainbowfish-sp",
+      "name": "퍼시픽 블루아이 레인보우피시",
+      "nameEn": "Pacific Blue-eyed Rainbowfish",
+      "latin": "Pseudomugil signifer",
+      "genus": "Pseudomugil",
+      "origin": "호주",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "rainbowfish-nano-blueeye",
+      "note": null
+    },
+    {
+      "id": "madagascar-rainbowfish-sp",
+      "name": "마다가스카르 레인보우피시",
+      "nameEn": "Madagascar Rainbowfish",
+      "latin": "Bedotia madagascarensis",
+      "genus": "Bedotia",
+      "origin": "마다가스카르",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "rainbowfish-madagascar",
+      "note": null
+    },
+    {
+      "id": "black-shark-sp",
+      "name": "블랙 샤크",
+      "nameEn": "Black Shark",
+      "latin": "Labeo chrysophekadion",
+      "genus": "Labeo",
+      "origin": "동남아시아",
+      "maxSize": 60,
+      "aliases": [],
+      "groupId": "black-shark",
+      "note": null
+    },
+    {
+      "id": "colombian-shark-sp",
+      "name": "콜롬비안 샤크",
+      "nameEn": "Colombian Shark",
+      "latin": "Sciades seemanni",
+      "genus": "Sciades",
+      "origin": "중남미 (기수역)",
+      "maxSize": 35,
+      "aliases": [
+        "블랙핀샤크"
+      ],
+      "groupId": "brackish-shark-catfish",
+      "note": null
+    },
+    {
+      "id": "silver-hatchetfish-sp",
+      "name": "실버 해쳇피시",
+      "nameEn": "Silver Hatchetfish",
+      "latin": "Gasteropelecus sternicla",
+      "genus": "Gasteropelecus",
+      "origin": "남미 아마존",
+      "maxSize": 6.5,
+      "aliases": [],
+      "groupId": "hatchetfish-silver",
+      "note": null
+    },
+    {
+      "id": "black-ghost-knifefish-sp",
+      "name": "블랙고스트 나이프피시",
+      "nameEn": "Black Ghost Knifefish",
+      "latin": "Apteronotus albifrons",
+      "genus": "Apteronotus",
+      "origin": "남미",
+      "maxSize": 50,
+      "aliases": [],
+      "groupId": "black-ghost-knifefish",
+      "note": null
+    },
+    {
+      "id": "pencilfish-sp",
+      "name": "펜슬피시",
+      "nameEn": "Pencilfish",
+      "latin": "Nannostomus eques",
+      "genus": "Nannostomus",
+      "origin": "남미 아마존",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "pencil-fish",
+      "note": null
+    },
+    {
+      "id": "african-red-eye-tetra-sp",
+      "name": "아프리칸 레드아이 테트라",
+      "nameEn": "African Red-eyed Tetra",
+      "latin": "Arnoldichthys spilopterus",
+      "genus": "Arnoldichthys",
+      "origin": "서아프리카 (나이지리아)",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "african-red-eye-tetra",
+      "note": null
+    },
+    {
+      "id": "headstander-sp",
+      "name": "스팟티드 헤드스탠더",
+      "nameEn": "Spotted Headstander",
+      "latin": "Chilodus punctatus",
+      "genus": "Chilodus",
+      "origin": "남미 아마존",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "headstander-fish",
+      "note": null
+    },
+    {
+      "id": "flagtail-prochilodus-sp",
+      "name": "플래그테일 프로칠로두스",
+      "nameEn": "Flagtail Prochilodus",
+      "latin": "Semaprochilodus taeniurus",
+      "genus": "Semaprochilodus",
+      "origin": "남미 아마존",
+      "maxSize": 30,
+      "aliases": [],
+      "groupId": "prochilodus",
+      "note": null
+    },
+    {
+      "id": "red-belly-piranha-sp",
+      "name": "레드벨리 피라냐",
+      "nameEn": "Red-Bellied Piranha",
+      "latin": "Pygocentrus nattereri",
+      "genus": "Pygocentrus",
+      "origin": "남미 아마존",
+      "maxSize": 33,
+      "aliases": [],
+      "groupId": "piranha",
+      "note": null
+    },
+    {
+      "id": "pacu-sp",
+      "name": "파쿠",
+      "nameEn": "Pacu",
+      "latin": "Piaractus brachypomus",
+      "genus": "Piaractus",
+      "origin": "남미 아마존",
+      "maxSize": 90,
+      "aliases": [],
+      "groupId": "pacu",
+      "note": null
+    },
+    {
+      "id": "serpae-tetra-sp",
+      "name": "세르파에 테트라",
+      "nameEn": "Serpae Tetra",
+      "latin": "Hyphessobrycon eques",
+      "genus": "Hyphessobrycon",
+      "origin": "남미",
+      "maxSize": 4,
+      "aliases": [],
+      "groupId": "serpae-tetra",
+      "note": null
+    },
+    {
+      "id": "bleeding-heart-tetra-sp",
+      "name": "블리딩하트 테트라",
+      "nameEn": "Bleeding Heart Tetra",
+      "latin": "Hyphessobrycon erythrostigma",
+      "genus": "Hyphessobrycon",
+      "origin": "남미",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "bleeding-heart-tetra",
+      "note": null
+    },
+    {
+      "id": "diamond-tetra-sp",
+      "name": "다이아몬드 테트라",
+      "nameEn": "Diamond Tetra",
+      "latin": "Moenkhausia pittieri",
+      "genus": "Moenkhausia",
+      "origin": "남미 (베네수엘라)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "diamond-tetra",
+      "note": null
+    },
+    {
+      "id": "buenos-aires-tetra-sp",
+      "name": "부에노스아이레스 테트라",
+      "nameEn": "Buenos Aires Tetra",
+      "latin": "Hyphessobrycon anisitsi",
+      "genus": "Hyphessobrycon",
+      "origin": "남미 (아르헨티나)",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "buenos-aires-tetra",
+      "note": null
+    },
+    {
+      "id": "emperor-tetra-sp",
+      "name": "엠퍼러 테트라",
+      "nameEn": "Emperor Tetra",
+      "latin": "Nematobrycon palmeri",
+      "genus": "Nematobrycon",
+      "origin": "남미 (콜롬비아)",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "emperor-tetra",
+      "note": null
+    },
+    {
+      "id": "penguin-tetra-sp",
+      "name": "펭귄 테트라",
+      "nameEn": "Penguin Tetra",
+      "latin": "Thayeria boehlkei",
+      "genus": "Thayeria",
+      "origin": "남미 아마존",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "penguin-tetra",
+      "note": null
+    },
+    {
+      "id": "blind-cave-tetra-sp",
+      "name": "블라인드케이브 테트라",
+      "nameEn": "Blind Cave Tetra",
+      "latin": "Astyanax mexicanus",
+      "genus": "Astyanax",
+      "origin": "중미 (멕시코 동굴)",
+      "maxSize": 9,
+      "aliases": [],
+      "groupId": "blind-cave-tetra",
+      "note": null
+    },
+    {
+      "id": "apistogramma-cacatuoides",
+      "name": "코카투 시클리드",
+      "nameEn": "Cockatoo Cichlid",
+      "latin": "Apistogramma cacatuoides",
+      "genus": "Apistogramma",
+      "origin": "남미 (페루, 브라질)",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "apistogramma",
+      "note": null
+    },
+    {
+      "id": "apistogramma-agassizii",
+      "name": "아가시지 시클리드",
+      "nameEn": "Agassiz's Dwarf Cichlid",
+      "latin": "Apistogramma agassizii",
+      "genus": "Apistogramma",
+      "origin": "남미 아마존",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "apistogramma",
+      "note": null
+    },
+    {
+      "id": "apistogramma-borellii",
+      "name": "보렐리 시클리드",
+      "nameEn": "Borelli's Dwarf Cichlid",
+      "latin": "Apistogramma borellii",
+      "genus": "Apistogramma",
+      "origin": "남미 (파라과이, 아르헨티나)",
+      "maxSize": 6,
+      "aliases": [],
+      "groupId": "apistogramma",
+      "note": null
+    },
+    {
+      "id": "polypterus-sp",
+      "name": "폴립테루스 (비클리)",
+      "nameEn": "Senegal Bichir",
+      "latin": "Polypterus senegalus",
+      "genus": "Polypterus",
+      "origin": "서아프리카",
+      "maxSize": 35,
+      "aliases": [
+        "세네갈비클리"
+      ],
+      "groupId": "polypterus",
+      "note": null
+    },
+    {
+      "id": "spiny-eel-sp",
+      "name": "스파이니 일",
+      "nameEn": "Peacock Spiny Eel",
+      "latin": "Macrognathus siamensis",
+      "genus": "Macrognathus",
+      "origin": "동남아시아",
+      "maxSize": 35,
+      "aliases": [
+        "피콕스파이니일"
+      ],
+      "groupId": "spiny-eel",
+      "note": null
+    },
+    {
+      "id": "halfbeak-sp",
+      "name": "하프비크",
+      "nameEn": "Wrestling Halfbeak",
+      "latin": "Dermogenys pusilla",
+      "genus": "Dermogenys",
+      "origin": "동남아시아",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "halfbeak",
+      "note": null
+    },
+    {
+      "id": "gold-barb-sp",
+      "name": "골드바브",
+      "nameEn": "Gold Barb",
+      "latin": "Barbodes semifasciolatus",
+      "genus": "Barbodes",
+      "origin": "중국, 베트남",
+      "maxSize": 7,
+      "aliases": [],
+      "groupId": "gold-barb",
+      "note": null
+    },
+    {
+      "id": "denison-barb-sp",
+      "name": "데니슨바브",
+      "nameEn": "Denison Barb / Roseline Shark",
+      "latin": "Sahyadria denisonii",
+      "genus": "Sahyadria",
+      "origin": "남인도",
+      "maxSize": 15,
+      "aliases": [
+        "로즈라인샤크"
+      ],
+      "groupId": "denison-barb",
+      "note": null
+    },
+    {
+      "id": "weather-loach-sp",
+      "name": "웨더로치 (미꾸라지)",
+      "nameEn": "Weather Loach / Dojo Loach",
+      "latin": "Misgurnus anguillicaudatus",
+      "genus": "Misgurnus",
+      "origin": "동아시아",
+      "maxSize": 25,
+      "aliases": [
+        "도조로치"
+      ],
+      "groupId": "weather-loach",
+      "note": null
+    },
+    {
+      "id": "zebra-loach-sp",
+      "name": "제브라로치",
+      "nameEn": "Zebra Loach",
+      "latin": "Botia striata",
+      "genus": "Botia",
+      "origin": "남인도",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "zebra-loach",
+      "note": null
+    },
+    {
+      "id": "giant-danio-sp",
+      "name": "자이언트다니오",
+      "nameEn": "Giant Danio",
+      "latin": "Devario aequipinnatus",
+      "genus": "Devario",
+      "origin": "남아시아 (인도, 스리랑카)",
+      "maxSize": 10,
+      "aliases": [],
+      "groupId": "giant-danio",
+      "note": null
+    },
+    {
+      "id": "chili-rasbora-sp",
+      "name": "칠리라스보라",
+      "nameEn": "Chili Rasbora",
+      "latin": "Boraras brigittae",
+      "genus": "Boraras",
+      "origin": "동남아시아 (보르네오)",
+      "maxSize": 2,
+      "aliases": [],
+      "groupId": "chili-rasbora",
+      "note": null
+    },
+    {
+      "id": "scissortail-rasbora-sp",
+      "name": "시저테일라스보라",
+      "nameEn": "Scissortail Rasbora",
+      "latin": "Rasbora trilineata",
+      "genus": "Rasbora",
+      "origin": "동남아시아",
+      "maxSize": 15,
+      "aliases": [],
+      "groupId": "scissortail-rasbora",
+      "note": null
+    },
+    {
+      "id": "orange-chromide-sp",
+      "name": "오렌지크로마이드",
+      "nameEn": "Orange Chromide",
+      "latin": "Etroplus maculatus",
+      "genus": "Etroplus",
+      "origin": "남인도, 스리랑카",
+      "maxSize": 8,
+      "aliases": [],
+      "groupId": "orange-chromide",
+      "note": null
+    },
+    {
+      "id": "fire-eel-sp",
+      "name": "파이어일",
+      "nameEn": "Fire Eel",
+      "latin": "Mastacembelus erythrotaenia",
+      "genus": "Mastacembelus",
+      "origin": "동남아시아",
+      "maxSize": 100,
+      "aliases": [],
+      "groupId": "fire-eel",
+      "note": null
+    },
+    {
+      "id": "red-tail-shark-sp",
+      "name": "레드테일 샤크",
+      "nameEn": "Red Tail Shark",
+      "latin": "Epalzeorhynchos bicolor",
+      "genus": "Epalzeorhynchos",
+      "origin": "동남아시아 (태국)",
+      "maxSize": 15,
+      "aliases": [
+        "레드테일블랙샤크"
+      ],
+      "groupId": "rainbow-shark",
+      "note": "레인보우샤크의 자매종으로 생태가 거의 동일하지만, 색이 다른 유사 어종(특히 검은색 계열)에게 특히 공격적인 경향이 보고됩니다."
+    },
+    {
+      "id": "rosy-barb-sp",
+      "name": "로지바브",
+      "nameEn": "Rosy Barb",
+      "latin": "Pethia conchonius",
+      "genus": "Pethia",
+      "origin": "남아시아 (인도)",
+      "maxSize": 8,
+      "aliases": [
+        "레드바브"
+      ],
+      "groupId": "rosy-barb",
+      "note": null
+    },
+    {
+      "id": "yellow-lab-cichlid-sp",
+      "name": "옐로우랩 시클리드",
+      "nameEn": "Yellow Lab Cichlid",
+      "latin": "Labidochromis caeruleus",
+      "genus": "Labidochromis",
+      "origin": "아프리카 말라위호",
+      "maxSize": 10,
+      "aliases": [
+        "일렉트릭옐로우"
+      ],
+      "groupId": "mbuna",
+      "note": "음부나 중에서는 비교적 온순한 편에 속하지만, 여전히 같은 Labidochromis 그룹끼리는 섞지 않는 게 좋습니다."
+    },
+    {
+      "id": "tinfoil-barb-sp",
+      "name": "틴포일바브",
+      "nameEn": "Tinfoil Barb",
+      "latin": "Barbonymus schwanenfeldii",
+      "genus": "Barbonymus",
+      "origin": "동남아시아",
+      "maxSize": 35,
+      "aliases": [],
+      "groupId": "tinfoil-barb",
+      "note": null
+    },
+    {
+      "id": "iridescent-shark-sp",
+      "name": "아이리디센트 샤크",
+      "nameEn": "Iridescent Shark",
+      "latin": "Pangasianodon hypophthalmus",
+      "genus": "Pangasianodon",
+      "origin": "동남아시아 (메콩강)",
+      "maxSize": 130,
+      "aliases": [
+        "팡가시우스"
+      ],
+      "groupId": "iridescent-shark",
+      "note": null
+    },
+    {
+      "id": "chinese-algae-eater-sp",
+      "name": "차이니즈 알지이터",
+      "nameEn": "Chinese Algae Eater",
+      "latin": "Gyrinocheilus aymonieri",
+      "genus": "Gyrinocheilus",
+      "origin": "동남아시아",
+      "maxSize": 27,
+      "aliases": [],
+      "groupId": "chinese-algae-eater",
+      "note": null
+    },
+    {
+      "id": "blue-dolphin-cichlid-sp",
+      "name": "블루돌핀 시클리드",
+      "nameEn": "Blue Dolphin Cichlid",
+      "latin": "Cyrtocara moorii",
+      "genus": "Cyrtocara",
+      "origin": "아프리카 말라위호",
+      "maxSize": 20,
+      "aliases": [],
+      "groupId": "hap",
+      "note": "이마가 돌고래처럼 튀어나온 것이 특징인 대형 합 시클리드로, 모래를 파헤치는 습성이 있어 바닥재 선택에 주의가 필요합니다."
+    },
+    {
+      "id": "marble-hatchetfish-sp",
+      "name": "마블 해쳇피시",
+      "nameEn": "Marble Hatchetfish",
+      "latin": "Carnegiella strigata",
+      "genus": "Carnegiella",
+      "origin": "남미 아마존",
+      "maxSize": 5,
+      "aliases": [],
+      "groupId": "hatchetfish-silver",
+      "note": null
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+.app-shell {
+  max-width: 720px;
+  margin: 0 auto;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header {
+  padding: 24px 20px 0;
+}
+
+.app-header h1 {
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+
+.app-header .sub {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 0 16px;
+}
+
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.tab-nav a {
+  padding: 10px 14px;
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+
+.tab-nav a.active {
+  color: var(--teal);
+  border-bottom-color: var(--teal);
+}
+
+.app-main {
+  flex: 1;
+  padding: 20px;
+}
+
+.state-msg {
+  color: var(--muted);
+  padding: 40px 0;
+  text-align: center;
+  font-size: 14px;
+}
+
+.state-msg.error {
+  color: var(--danger);
+}
