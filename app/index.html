@@ -417,16 +417,24 @@
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">species database — v0.1 prototype</div>
-    <h1>열대어 도감</h1>
-    <p class="sub">어종별 사육 조건을 확인하세요. 현재 147종(121개 케어그룹)이 반영되어 있습니다. 색상 변이가 많은 어종은 '유통명'으로 검색해도 찾을 수 있어요.</p>
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+      <div>
+        <div class="eyebrow" id="eyebrowText">species database — v0.1 prototype</div>
+        <h1 id="appTitle">열대어 도감</h1>
+        <p class="sub" id="appSubtitle">어종별 사육 조건을 확인하세요. 현재 147종(121개 케어그룹)이 반영되어 있습니다. 색상 변이가 많은 어종은 '유통명'으로 검색해도 찾을 수 있어요.</p>
+      </div>
+      <select id="langSelect" class="tank-filter" style="width:auto;flex-shrink:0;">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+      </select>
+    </div>
   </header>
 
   <div class="tabs">
-    <button class="tab-btn active" data-tab="dex">종 도감</button>
-    <button class="tab-btn" data-tab="compat">합사 체크 (2종)</button>
-    <button class="tab-btn" data-tab="tank">어항 구성 체크</button>
-    <button class="tab-btn" data-tab="mytank">내 어항</button>
+    <button class="tab-btn active" data-tab="dex" id="tabBtnDex">종 도감</button>
+    <button class="tab-btn" data-tab="compat" id="tabBtnCompat">합사 체크 (2종)</button>
+    <button class="tab-btn" data-tab="tank" id="tabBtnTank">어항 구성 체크</button>
+    <button class="tab-btn" data-tab="mytank" id="tabBtnMyTank">내 어항</button>
   </div>
 
   <div id="dexPanel"></div>
@@ -440,6 +448,148 @@
 </div>
 
 <script>
+// ---------------------------------------------------------------
+// i18n (한국어 / English)
+// 범위: UI 메뉴/버튼/라벨/필터/뱃지 텍스트, 종 이름(nameEn 활용).
+// 범위 밖: 종별 사육팁/노트/합사체크 사유 문장 등 긴 서술형 텍스트는
+// 데이터양이 매우 많아(120+ 그룹) 이번 범위에서는 한국어로 유지함.
+// React 마이그레이션 시 정식 i18n 라이브러리(react-i18next 등)로 재작업 권장.
+// ---------------------------------------------------------------
+const LANG_KEY = 'fishAppLang_v1';
+let currentLang = localStorage.getItem(LANG_KEY) || 'ko';
+
+const I18N = {
+  ko: {
+    eyebrow: 'species database — v0.1 prototype',
+    appTitle: '열대어 도감',
+    appSubtitle: (n, g) => `어종별 사육 조건을 확인하세요. 현재 ${n}종(${g}개 케어그룹)이 반영되어 있습니다. 색상 변이가 많은 어종은 '유통명'으로 검색해도 찾을 수 있어요.`,
+    tabDex: '종 도감', tabCompat: '합사 체크 (2종)', tabTank: '어항 구성 체크', tabMyTank: '내 어항',
+    searchPlaceholder: '어종 이름으로 검색 (예: 구피, guppy)',
+    filterAll: '전체',
+    diffBeginner: '초급', diffIntermediate: '중급', diffAdvanced: '고급',
+    tankSizeAllOpt: '어항 크기: 전체', tankSizeSmall: '소형 (~40L)', tankSizeMedium: '중형 (41~150L)', tankSizeLarge: '대형 (150L~)',
+    temperamentAllOpt: '성격: 전체', temperamentPeaceful: '온순함', temperamentSemi: '약간 공격적', temperamentAggressive: '공격적',
+    waterLevelAllOpt: '서식수층: 전체', waterLevelTop: '상층', waterLevelMid: '중층', waterLevelBottom: '하층',
+    genusAllOpt: '속(genus): 전체',
+    noResults: '검색 결과가 없습니다.',
+    difficultyLabel: '난이도', genusLabel: '속', schoolingNeed: (n)=>`군집 필요 · 최소 ${n}마리`, soloOk: '단독 사육 가능',
+    finNipperBadge: '지느러미 뭄', predatoryBadge: '포식성', territorialBadge: '영역성',
+    sameSpeciesBadge: '동종간 공격성', breedingBadge: '번식기 공격성↑',
+    aliasesLabel: '유통명', genusUnverified: '⚠ 학명/속 확인 필요 — 구매 전 판매처에 정확한 종명을 문의하세요.',
+    factOrigin: '원산지', factMaxSize: '최대 크기', factLifespan: '수명', factTankMin: '최소 어항 크기', factDiet: '먹이', factFeeding: '급여 빈도',
+    tipsLabel: '사육 팁', speciesNoteLabel: '이 종 관련 특이사항',
+    compatSub: '두 어종을 선택하면 수온·pH 겹침, 성격, 크기 차이를 기준으로 합사 가능 여부를 확인해드려요.',
+    speciesALabel: '어종 A', speciesBLabel: '어종 B', compatCheckBtn: '합사 체크하기',
+    pickFromList: '자동완성 목록에서 어종을 선택해주세요.',
+    tankCheckSub: '계획 중인 어항 구성을 전부 넣으면, 모든 종 조합을 한번에 확인해드려요.',
+    addSpeciesPlaceholder: '어종 추가 (예: 네온테트라)',
+    tankCheckBtn: '전체 체크하기', needTwoSpecies: '최소 2종 이상 추가해주세요.',
+    verdictOkTitle: '합사 적합', verdictOkSub: '두 어종은 사육 조건이 잘 맞습니다.',
+    verdictCautionTitle: '주의 필요', verdictCautionSub: '합사는 가능하지만 몇 가지 신경 쓸 부분이 있습니다.',
+    verdictBadTitle: '합사 비추천', verdictBadSub: '두 어종을 함께 키우는 것은 권장하지 않습니다.',
+    tankVerdictOkTitle: '전체 합사 적합', tankVerdictOkSub: '모든 조합이 무난하게 맞습니다.',
+    tankVerdictCautionTitle: '일부 조합 주의 필요', tankVerdictCautionSub: '아래 상세 조합을 확인해보세요.',
+    tankVerdictBadTitle: '일부 조합 비추천', tankVerdictBadSub: '아래에서 어떤 종 조합이 문제인지 확인해보세요.',
+    commonTemp: '공통 수온 구간', commonPh: '공통 pH 구간', recommendedTank: '권장 최소 어항', comparedPairs: '비교한 조합 수',
+    pairsUnit: (n, s)=>`${n}쌍 (${s}종)`, noOverlap: '겹치는 구간 없음 ⚠',
+    pairDetailLabel: '종 쌍별 상세 결과 (심각한 순)', noNotable: '특이사항 없음',
+    myTankSub: '저장한 어항 구성을 관리하고, 스토킹/수질 기록/리마인더를 확인하세요.',
+    addTankBtn: '+ 새 어항 추가', noTanksYet: '아직 저장한 어항이 없습니다. "새 어항 추가"로 시작해보세요.',
+    editTank: '어항 수정', addTank: '새 어항 추가', tankName: '어항 이름', tankNamePlaceholder: '예: 거실 60cm 어항',
+    unitLabel: '단위', lenLabel: (u)=>`가로(${u})`, widLabel: (u)=>`세로/폭(${u})`, heiLabel: (u)=>`높이(${u})`,
+    volumeLabel: '예상 부피', addSpeciesLabel: '어종 추가', speciesSearchPlaceholder: '어종 검색', unitCount: '마리',
+    saveBtn: '저장', addBtn: '추가', deleteBtn: '삭제', confirmDeleteText: '정말 삭제할까요? 수질 기록과 리마인더도 함께 삭제됩니다.',
+    confirmDeleteYes: '예, 삭제합니다', cancelBtn: '취소', backToList: '← 목록으로',
+    subStocking: '스토킹', subWaterlog: '수질 기록', subReminders: '리마인더', editBtn: '수정',
+    currentVolume: '현재 어항 용량', recommendedMin: '권장 최소 용량', totalCount: '총 개체수',
+    sufficientVolume: '충분한 용량입니다.', shortVolume: (n)=>`권장 용량보다 ${n} 부족합니다.`,
+    registeredSpecies: (n,c)=>`등록된 어종 (${n}종 · ${c}마리)`, pairCompat: '종 쌍 궁합',
+    noSpeciesRegistered: '등록된 어종이 없습니다. "수정"에서 어종을 추가해보세요.',
+    dateLabel: '날짜', tempLabel: '온도(°C)', noteLabel: '내용(메모)', notePlaceholder: '예: 물갈이 30%, 특이사항 없음',
+    addLogBtn: '기록 추가', noLogsYet: '아직 기록이 없습니다.',
+    todoLabel: '할 일', todoPlaceholder: '예: 급여, 수질교체', intervalLabel: '주기(일)', addReminderBtn: '리마인더 추가',
+    noReminders: '등록된 리마인더가 없습니다.', doneBtn: '완료', dayCycle: (n)=>`${n}일 주기`,
+    overdueText: (d)=>`지연됨 (예정일: ${d})`, dueTodayText: '오늘 할 일', nextDueText: (d)=>`다음: ${d}`,
+  },
+  en: {
+    eyebrow: 'species database — v0.1 prototype',
+    appTitle: 'Tropical Fish Guide',
+    appSubtitle: (n, g) => `Look up care requirements by species. Currently covering ${n} species (${g} care groups). Color-variant species can also be found by searching their trade name.`,
+    tabDex: 'Species Guide', tabCompat: 'Compatibility Check (2)', tabTank: 'Tank Builder Check', tabMyTank: 'My Tanks',
+    searchPlaceholder: 'Search by species name (e.g. guppy)',
+    filterAll: 'All',
+    diffBeginner: 'Beginner', diffIntermediate: 'Intermediate', diffAdvanced: 'Advanced',
+    tankSizeAllOpt: 'Tank size: All', tankSizeSmall: 'Small (~40L)', tankSizeMedium: 'Medium (41–150L)', tankSizeLarge: 'Large (150L+)',
+    temperamentAllOpt: 'Temperament: All', temperamentPeaceful: 'Peaceful', temperamentSemi: 'Semi-aggressive', temperamentAggressive: 'Aggressive',
+    waterLevelAllOpt: 'Water level: All', waterLevelTop: 'Top', waterLevelMid: 'Mid', waterLevelBottom: 'Bottom',
+    genusAllOpt: 'Genus: All',
+    noResults: 'No results found.',
+    difficultyLabel: 'Difficulty', genusLabel: 'Genus', schoolingNeed: (n)=>`Needs schooling · min ${n}`, soloOk: 'Can be kept alone',
+    finNipperBadge: 'Fin nipper', predatoryBadge: 'Predatory', territorialBadge: 'Territorial',
+    sameSpeciesBadge: 'Intraspecific aggression', breedingBadge: 'Aggressive when breeding',
+    aliasesLabel: 'Trade names', genusUnverified: '⚠ Species ID unverified — confirm the exact species with the seller before buying.',
+    factOrigin: 'Origin', factMaxSize: 'Max size', factLifespan: 'Lifespan', factTankMin: 'Min tank size', factDiet: 'Diet', factFeeding: 'Feeding frequency',
+    tipsLabel: 'Care tips', speciesNoteLabel: 'Species-specific notes',
+    compatSub: 'Pick two species to check temperature/pH overlap, temperament, and size difference for tankmate compatibility.',
+    speciesALabel: 'Species A', speciesBLabel: 'Species B', compatCheckBtn: 'Check compatibility',
+    pickFromList: 'Please select a species from the autocomplete list.',
+    tankCheckSub: 'Add your planned tank stocking list to check every species pair at once.',
+    addSpeciesPlaceholder: 'Add species (e.g. neon tetra)',
+    tankCheckBtn: 'Check all', needTwoSpecies: 'Add at least 2 species.',
+    verdictOkTitle: 'Compatible', verdictOkSub: 'These two species have well-matched care requirements.',
+    verdictCautionTitle: 'Caution advised', verdictCautionSub: 'Compatible, but there are a few things to watch out for.',
+    verdictBadTitle: 'Not recommended', verdictBadSub: 'Keeping these two species together is not recommended.',
+    tankVerdictOkTitle: 'All compatible', tankVerdictOkSub: 'Every combination looks fine.',
+    tankVerdictCautionTitle: 'Some pairs need caution', tankVerdictCautionSub: 'Check the pair-by-pair results below.',
+    tankVerdictBadTitle: 'Some pairs not recommended', tankVerdictBadSub: 'Check below to see which pair is problematic.',
+    commonTemp: 'Shared temp. range', commonPh: 'Shared pH range', recommendedTank: 'Recommended min. tank', comparedPairs: 'Pairs compared',
+    pairsUnit: (n, s)=>`${n} pairs (${s} species)`, noOverlap: 'No overlap ⚠',
+    pairDetailLabel: 'Pair-by-pair results (most severe first)', noNotable: 'Nothing notable',
+    myTankSub: 'Manage your saved tanks and check stocking, water log, and reminders.',
+    addTankBtn: '+ Add tank', noTanksYet: 'No saved tanks yet. Start with "Add tank".',
+    editTank: 'Edit tank', addTank: 'Add tank', tankName: 'Tank name', tankNamePlaceholder: 'e.g. Living room 60cm tank',
+    unitLabel: 'Units', lenLabel: (u)=>`Length (${u})`, widLabel: (u)=>`Width (${u})`, heiLabel: (u)=>`Height (${u})`,
+    volumeLabel: 'Estimated volume', addSpeciesLabel: 'Add species', speciesSearchPlaceholder: 'Search species', unitCount: '',
+    saveBtn: 'Save', addBtn: 'Add', deleteBtn: 'Delete', confirmDeleteText: 'Delete this tank? Water logs and reminders will also be removed.',
+    confirmDeleteYes: 'Yes, delete', cancelBtn: 'Cancel', backToList: '← Back to list',
+    subStocking: 'Stocking', subWaterlog: 'Water Log', subReminders: 'Reminders', editBtn: 'Edit',
+    currentVolume: 'Current tank volume', recommendedMin: 'Recommended min. volume', totalCount: 'Total individuals',
+    sufficientVolume: 'Volume is sufficient.', shortVolume: (n)=>`${n} short of the recommended volume.`,
+    registeredSpecies: (n,c)=>`Registered species (${n} species · ${c} total)`, pairCompat: 'Pairwise compatibility',
+    noSpeciesRegistered: 'No species registered yet. Add some in "Edit".',
+    dateLabel: 'Date', tempLabel: 'Temp (°C)', noteLabel: 'Note', notePlaceholder: 'e.g. 30% water change, nothing unusual',
+    addLogBtn: 'Add entry', noLogsYet: 'No entries yet.',
+    todoLabel: 'Task', todoPlaceholder: 'e.g. Feeding, water change', intervalLabel: 'Interval (days)', addReminderBtn: 'Add reminder',
+    noReminders: 'No reminders yet.', doneBtn: 'Done', dayCycle: (n)=>`Every ${n} days`,
+    overdueText: (d)=>`Overdue (was due: ${d})`, dueTodayText: 'Due today', nextDueText: (d)=>`Next: ${d}`,
+  }
+};
+function t(key, ...args){
+  const entry = I18N[currentLang][key];
+  return typeof entry === 'function' ? entry(...args) : entry;
+}
+function speciesDisplayName(s){
+  return currentLang === 'ko' ? s.name : (s.nameEn || s.name);
+}
+function translateDifficulty(d){
+  const map = {'초급':'diffBeginner','중급':'diffIntermediate','고급':'diffAdvanced'};
+  return map[d] ? t(map[d]) : d;
+}
+function translateTemperament(temp){
+  const map = {'peaceful':'temperamentPeaceful','semi-aggressive':'temperamentSemi','aggressive':'temperamentAggressive'};
+  return map[temp] ? t(map[temp]) : temp;
+}
+function translateWaterLevel(wl){
+  if(currentLang === 'ko') return wl;
+  return wl.split('~').map(part=>{
+    if(part.includes('상')) return 'Top';
+    if(part.includes('중')) return 'Mid';
+    if(part.includes('하')) return 'Bottom';
+    if(part.includes('전')) return 'All';
+    return part;
+  }).join('~');
+}
+
 
 // ---------------------------------------------------------------
 // 데이터 스키마: 여기 species 배열만 수정/추가하면 됩니다.
@@ -5829,13 +5979,13 @@ function card(s){
   const f = getSpec(s);
   return `
   <div class="card" data-id="${s.id}">
-    <span class="tag">${f.difficulty}</span>
+    <span class="tag">${translateDifficulty(f.difficulty)}</span>
     ${fishIcon(f.color)}
-    <h3>${s.name}</h3>
+    <h3>${speciesDisplayName(s)}</h3>
     <div class="latin">${s.latin}</div>
     <div class="mini-spec">
-      <span>수조 <b>${f.tankMin}L~ (${tankCategory(f.tankMin)})</b></span>
-      <span>온도 <b>${f.temp[0]}~${f.temp[1]}°C</b></span>
+      <span>${currentLang==='ko'?'수조':'Tank'} <b>${f.tankMin}L~ (${tankCategoryLabel(f.tankMin)})</b></span>
+      <span>${currentLang==='ko'?'온도':'Temp'} <b>${f.temp[0]}~${f.temp[1]}°C</b></span>
     </div>
   </div>`;
 }
@@ -5851,31 +6001,31 @@ function detailPanel(s){
   <div class="panel-head">
     ${fishIcon(f.color)}
     <div>
-      <h2>${s.name} <span style="color:var(--muted);font-weight:400;font-size:16px;">· ${s.nameEn}</span></h2>
+      <h2>${speciesDisplayName(s)} <span style="color:var(--muted);font-weight:400;font-size:16px;">· ${currentLang==='ko'?s.nameEn:s.name}</span></h2>
       <div class="latin">${s.latin}</div>
     </div>
   </div>
 
-  ${s.genus === '확인 필요' ? `<div style="font-size:12px;color:var(--danger);margin-bottom:10px;">⚠ 학명/속 확인 필요 — 구매 전 판매처에 정확한 종명을 문의하세요.</div>` : ''}
-  ${s.aliases && s.aliases.length ? `<div style="font-size:12px;color:var(--muted);margin-bottom:10px;">유통명: ${s.aliases.join(', ')}</div>` : ''}
+  ${s.genus === '확인 필요' ? `<div style="font-size:12px;color:var(--danger);margin-bottom:10px;">${t('genusUnverified')}</div>` : ''}
+  ${s.aliases && s.aliases.length ? `<div style="font-size:12px;color:var(--muted);margin-bottom:10px;">${t('aliasesLabel')}: ${s.aliases.join(', ')}</div>` : ''}
 
   <div class="badges">
-    <span class="badge diff-${f.difficulty}">난이도: ${f.difficulty}</span>
-    <span class="badge">${temperamentLabel(f.temperament)}</span>
-    <span class="badge">${f.waterLevel}</span>
-    <span class="badge">속: ${s.genus}</span>
-    ${f.schooling.need ? `<span class="badge">군집 필요 · 최소 ${f.schooling.minGroup}마리</span>` : `<span class="badge">단독 사육 가능</span>`}
-    ${f.finNipper ? `<span class="badge" style="color:var(--amber);border-color:#8a5f2f;">지느러미 뭄</span>` : ''}
-    ${f.predatory ? `<span class="badge" style="color:var(--danger);border-color:#8a4330;">포식성</span>` : ''}
-    ${f.territorial ? `<span class="badge" style="color:var(--amber);border-color:#8a5f2f;">영역성</span>` : ''}
-    ${f.sameSpeciesAggressionOnly ? `<span class="badge">동종간 공격성</span>` : ''}
-    ${f.breedingAggressionOnly ? `<span class="badge">번식기 공격성↑</span>` : ''}
+    <span class="badge diff-${f.difficulty}">${t('difficultyLabel')}: ${translateDifficulty(f.difficulty)}</span>
+    <span class="badge">${translateTemperament(f.temperament)}</span>
+    <span class="badge">${translateWaterLevel(f.waterLevel)}</span>
+    <span class="badge">${t('genusLabel')}: ${s.genus}</span>
+    ${f.schooling.need ? `<span class="badge">${t('schoolingNeed', f.schooling.minGroup)}</span>` : `<span class="badge">${t('soloOk')}</span>`}
+    ${f.finNipper ? `<span class="badge" style="color:var(--amber);border-color:#8a5f2f;">${t('finNipperBadge')}</span>` : ''}
+    ${f.predatory ? `<span class="badge" style="color:var(--danger);border-color:#8a4330;">${t('predatoryBadge')}</span>` : ''}
+    ${f.territorial ? `<span class="badge" style="color:var(--amber);border-color:#8a5f2f;">${t('territorialBadge')}</span>` : ''}
+    ${f.sameSpeciesAggressionOnly ? `<span class="badge">${t('sameSpeciesBadge')}</span>` : ''}
+    ${f.breedingAggressionOnly ? `<span class="badge">${t('breedingBadge')}</span>` : ''}
   </div>
 
   <div class="spec-section">
-    <div class="spec-label">수질 조건</div>
+    <div class="spec-label">${currentLang==='ko'?'수질 조건':'Water Parameters'}</div>
     <div class="range-row">
-      <div class="range-head"><span class="name">수온</span><span class="val">${tempDegree(f)}</span></div>
+      <div class="range-head"><span class="name">${currentLang==='ko'?'수온':'Temp'}</span><span class="val">${tempDegree(f)}</span></div>
       ${rangeBar(f.temp[0], f.temp[1], TEMP_RANGE[0], TEMP_RANGE[1])}
     </div>
     <div class="range-row">
@@ -5885,24 +6035,24 @@ function detailPanel(s){
   </div>
 
   <div class="spec-section">
-    <div class="spec-label">기본 정보</div>
+    <div class="spec-label">${currentLang==='ko'?'기본 정보':'Basic Info'}</div>
     <div class="facts">
-      <div><div class="fact-label">원산지</div><div class="fact-val">${s.origin}</div></div>
-      <div><div class="fact-label">최대 크기</div><div class="fact-val">${s.maxSize}cm</div></div>
-      <div><div class="fact-label">수명</div><div class="fact-val">${f.lifespan}</div></div>
-      <div><div class="fact-label">최소 어항 크기</div><div class="fact-val">${f.tankMin}L</div></div>
-      <div><div class="fact-label">먹이</div><div class="fact-val">${f.diet}</div></div>
-      <div><div class="fact-label">급여 빈도</div><div class="fact-val">${f.feeding}</div></div>
+      <div><div class="fact-label">${t('factOrigin')}</div><div class="fact-val">${s.origin}</div></div>
+      <div><div class="fact-label">${t('factMaxSize')}</div><div class="fact-val">${s.maxSize}cm</div></div>
+      <div><div class="fact-label">${t('factLifespan')}</div><div class="fact-val">${f.lifespan}</div></div>
+      <div><div class="fact-label">${t('factTankMin')}</div><div class="fact-val">${f.tankMin}L</div></div>
+      <div><div class="fact-label">${t('factDiet')}</div><div class="fact-val">${f.diet}</div></div>
+      <div><div class="fact-label">${t('factFeeding')}</div><div class="fact-val">${f.feeding}</div></div>
     </div>
   </div>
 
   <div class="spec-section" style="margin-bottom:0;">
-    <div class="spec-label">사육 팁</div>
+    <div class="spec-label">${t('tipsLabel')}</div>
     <div class="tips">${f.tips}</div>
   </div>
 
   ${s.note ? `<div class="spec-section" style="margin-bottom:0;margin-top:16px;">
-    <div class="spec-label">이 종 관련 특이사항</div>
+    <div class="spec-label">${t('speciesNoteLabel')}</div>
     <div class="tips" style="border-left-color:var(--danger);">${s.note}</div>
   </div>` : ''}
   `;
@@ -5918,6 +6068,11 @@ function tankCategory(tankMin){
   if(tankMin <= 40) return '소형';
   if(tankMin <= 150) return '중형';
   return '대형';
+}
+function tankCategoryLabel(tankMin){
+  const cat = tankCategory(tankMin);
+  const map = {'소형':'tankSizeSmall','중형':'tankSizeMedium','대형':'tankSizeLarge'};
+  return t(map[cat]);
 }
 
 function render(){
@@ -5960,112 +6115,140 @@ document.getElementById('overlay').addEventListener('click', (e)=>{
 // Dex panel template (moved into JS so it can share the page with
 // the compatibility checker panel via simple tab switching)
 // ---------------------------------------------------------------
-const dexPanelHTML = `
+function buildDexPanelHTML(){
+  return `
   <svg class="waveline" viewBox="0 0 1080 14" preserveAspectRatio="none">
     <path d="M0 7 Q 30 0, 60 7 T 120 7 T 180 7 T 240 7 T 300 7 T 360 7 T 420 7 T 480 7 T 540 7 T 600 7 T 660 7 T 720 7 T 780 7 T 840 7 T 900 7 T 960 7 T 1020 7 T 1080 7"
       stroke="#2a8a7c" stroke-width="1.5" fill="none" opacity="0.8"/>
   </svg>
   <div class="controls">
-    <input class="search" id="searchInput" placeholder="어종 이름으로 검색 (예: 구피, guppy)" />
-    <button class="filter-btn active" data-diff="all">전체</button>
-    <button class="filter-btn" data-diff="초급">초급</button>
-    <button class="filter-btn" data-diff="중급">중급</button>
-    <button class="filter-btn" data-diff="고급">고급</button>
+    <input class="search" id="searchInput" placeholder="${t('searchPlaceholder')}" />
+    <button class="filter-btn ${activeDiff==='all'?'active':''}" data-diff="all">${t('filterAll')}</button>
+    <button class="filter-btn ${activeDiff==='초급'?'active':''}" data-diff="초급">${t('diffBeginner')}</button>
+    <button class="filter-btn ${activeDiff==='중급'?'active':''}" data-diff="중급">${t('diffIntermediate')}</button>
+    <button class="filter-btn ${activeDiff==='고급'?'active':''}" data-diff="고급">${t('diffAdvanced')}</button>
     <div class="select-wrap">
       <select class="tank-filter" id="tankSizeFilter">
-        <option value="all">어항 크기: 전체</option>
-        <option value="소형">소형 (~40L)</option>
-        <option value="중형">중형 (41~150L)</option>
-        <option value="대형">대형 (150L~)</option>
+        <option value="all">${t('tankSizeAllOpt')}</option>
+        <option value="소형">${t('tankSizeSmall')}</option>
+        <option value="중형">${t('tankSizeMedium')}</option>
+        <option value="대형">${t('tankSizeLarge')}</option>
       </select>
     </div>
     <div class="select-wrap">
       <select class="tank-filter" id="temperamentFilter">
-        <option value="all">성격: 전체</option>
-        <option value="peaceful">온순함</option>
-        <option value="semi-aggressive">약간 공격적</option>
-        <option value="aggressive">공격적</option>
+        <option value="all">${t('temperamentAllOpt')}</option>
+        <option value="peaceful">${t('temperamentPeaceful')}</option>
+        <option value="semi-aggressive">${t('temperamentSemi')}</option>
+        <option value="aggressive">${t('temperamentAggressive')}</option>
       </select>
     </div>
     <div class="select-wrap">
       <select class="tank-filter" id="waterLevelFilter">
-        <option value="all">서식수층: 전체</option>
-        <option value="상">상층</option>
-        <option value="중">중층</option>
-        <option value="하">하층</option>
+        <option value="all">${t('waterLevelAllOpt')}</option>
+        <option value="상">${t('waterLevelTop')}</option>
+        <option value="중">${t('waterLevelMid')}</option>
+        <option value="하">${t('waterLevelBottom')}</option>
       </select>
     </div>
     <div class="select-wrap">
       <select class="tank-filter" id="genusFilter">
-        <option value="all">속(genus): 전체</option>
+        <option value="all">${t('genusAllOpt')}</option>
       </select>
     </div>
   </div>
   <div class="grid" id="grid"></div>
-  <div class="empty" id="emptyMsg" style="display:none;">검색 결과가 없습니다.</div>
+  <div class="empty" id="emptyMsg" style="display:none;">${t('noResults')}</div>
 `;
+}
 
-document.getElementById('dexPanel').innerHTML = dexPanelHTML;
+function initDexPanel(){
+  document.getElementById('dexPanel').innerHTML = buildDexPanelHTML();
 
-const genusFilterEl = document.getElementById('genusFilter');
-const uniqueGenera = [...new Set(speciesList.map(s=>s.genus).filter(g=>g && g!=='확인 필요'))].sort((a,b)=>a.localeCompare(b));
-genusFilterEl.innerHTML = '<option value="all">속(genus): 전체</option>' +
-  uniqueGenera.map(g=>`<option value="${g}">${g}</option>`).join('');
+  const genusFilterEl = document.getElementById('genusFilter');
+  const uniqueGenera = [...new Set(speciesList.map(s=>s.genus).filter(g=>g && g!=='확인 필요'))].sort((a,b)=>a.localeCompare(b));
+  genusFilterEl.innerHTML = `<option value="all">${t('genusAllOpt')}</option>` +
+    uniqueGenera.map(g=>`<option value="${g}">${g}</option>`).join('');
+  genusFilterEl.value = activeGenus;
 
-document.getElementById('searchInput').addEventListener('input', render);
-document.getElementById('tankSizeFilter').addEventListener('change', (e)=>{
-  activeTankSize = e.target.value;
-  render();
-});
-document.getElementById('temperamentFilter').addEventListener('change', (e)=>{
-  activeTemperament = e.target.value;
-  render();
-});
-document.getElementById('waterLevelFilter').addEventListener('change', (e)=>{
-  activeWaterLevel = e.target.value;
-  render();
-});
-genusFilterEl.addEventListener('change', (e)=>{
-  activeGenus = e.target.value;
-  render();
-});
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click', ()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    activeDiff = btn.dataset.diff;
+  document.getElementById('tankSizeFilter').value = activeTankSize;
+  document.getElementById('temperamentFilter').value = activeTemperament;
+  document.getElementById('waterLevelFilter').value = activeWaterLevel;
+
+  document.getElementById('searchInput').addEventListener('input', render);
+  document.getElementById('tankSizeFilter').addEventListener('change', (e)=>{
+    activeTankSize = e.target.value;
     render();
   });
-});
+  document.getElementById('temperamentFilter').addEventListener('change', (e)=>{
+    activeTemperament = e.target.value;
+    render();
+  });
+  document.getElementById('waterLevelFilter').addEventListener('change', (e)=>{
+    activeWaterLevel = e.target.value;
+    render();
+  });
+  genusFilterEl.addEventListener('change', (e)=>{
+    activeGenus = e.target.value;
+    render();
+  });
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      activeDiff = btn.dataset.diff;
+      render();
+    });
+  });
 
-render();
+  render();
+}
+initDexPanel();
 
 // ---------------------------------------------------------------
 // 합사 체크 (Compatibility Checker)
 // ---------------------------------------------------------------
-const compatPanelHTML = `
-  <p class="sub" style="margin-bottom:24px;">두 어종을 선택하면 수온·pH 겹침, 성격, 크기 차이를 기준으로 합사 가능 여부를 확인해드려요.</p>
+function buildCompatPanelHTML(){
+  return `
+  <p class="sub" style="margin-bottom:24px;">${t('compatSub')}</p>
   <div class="compat-pickers">
     <div class="compat-pick">
-      <label>어종 A</label>
-      <input type="text" id="compatInputA" autocomplete="off" placeholder="예: 구피" />
+      <label>${t('speciesALabel')}</label>
+      <input type="text" id="compatInputA" autocomplete="off" placeholder="${currentLang==='ko'?'예: 구피':'e.g. guppy'}" />
       <div class="suggest-list" id="suggestListA"></div>
     </div>
     <div class="compat-vs">×</div>
     <div class="compat-pick">
-      <label>어종 B</label>
-      <input type="text" id="compatInputB" autocomplete="off" placeholder="예: 베타" />
+      <label>${t('speciesBLabel')}</label>
+      <input type="text" id="compatInputB" autocomplete="off" placeholder="${currentLang==='ko'?'예: 베타':'e.g. betta'}" />
       <div class="suggest-list" id="suggestListB"></div>
     </div>
-    <button class="compat-btn" id="compatBtn">합사 체크하기</button>
+    <button class="compat-btn" id="compatBtn">${t('compatCheckBtn')}</button>
   </div>
   <div id="compatResult"></div>
 `;
+}
 
-document.getElementById('compatPanelWrap').innerHTML = compatPanelHTML;
+function initCompatPanel(){
+  document.getElementById('compatPanelWrap').innerHTML = buildCompatPanelHTML();
+  attachAutocomplete('compatInputA', 'suggestListA', (s)=>{ selectedCompatA = s; }, ()=>{ selectedCompatA = null; });
+  attachAutocomplete('compatInputB', 'suggestListB', (s)=>{ selectedCompatB = s; }, ()=>{ selectedCompatB = null; });
+  document.getElementById('compatBtn').addEventListener('click', ()=>{
+    const sA = selectedCompatA || findSpeciesByInput(document.getElementById('compatInputA').value);
+    const sB = selectedCompatB || findSpeciesByInput(document.getElementById('compatInputB').value);
+    const result = document.getElementById('compatResult');
+    if(!sA || !sB){
+      result.innerHTML = `<div class="compat-empty">${t('pickFromList')}</div>`;
+      return;
+    }
+    renderCompatResult(sA, sB);
+  });
+}
 
 function displayLabel(s){
-  return (s.nameEn && s.nameEn !== s.name) ? `${s.name} (${s.nameEn})` : s.name;
+  const primary = speciesDisplayName(s);
+  const secondary = currentLang === 'ko' ? s.nameEn : s.name;
+  return (secondary && secondary !== primary) ? `${primary} (${secondary})` : primary;
 }
 
 // 부분 일치(substring) 검색 — 이름/영문명/학명/유통명 전부 대상.
@@ -6121,9 +6304,6 @@ function attachAutocomplete(inputId, listId, onSelect, onType){
     if(e.target !== input && !list.contains(e.target)) list.classList.remove('open');
   });
 }
-
-attachAutocomplete('compatInputA', 'suggestListA', (s)=>{ selectedCompatA = s; }, ()=>{ selectedCompatA = null; });
-attachAutocomplete('compatInputB', 'suggestListB', (s)=>{ selectedCompatB = s; }, ()=>{ selectedCompatB = null; });
 
 function findSpeciesByInput(value){
   const v = (value || '').trim();
@@ -6341,11 +6521,12 @@ function renderCompatResult(sA, sB){
   const fA = getSpec(sA), fB = getSpec(sB);
   const compat = computeCompat(sA, sB);
   const verdictMap = {
-    0:{cls:'ok', icon:'✓', title:'합사 적합', sub:'두 어종은 사육 조건이 잘 맞습니다.'},
-    1:{cls:'caution', icon:'!', title:'주의 필요', sub:'합사는 가능하지만 몇 가지 신경 쓸 부분이 있습니다.'},
-    2:{cls:'bad', icon:'✕', title:'합사 비추천', sub:'두 어종을 함께 키우는 것은 권장하지 않습니다.'},
+    0:{cls:'ok', icon:'✓', title:t('verdictOkTitle'), sub:t('verdictOkSub')},
+    1:{cls:'caution', icon:'!', title:t('verdictCautionTitle'), sub:t('verdictCautionSub')},
+    2:{cls:'bad', icon:'✕', title:t('verdictBadTitle'), sub:t('verdictBadSub')},
   };
   const v = verdictMap[compat.severity];
+  const nameA = speciesDisplayName(sA), nameB = speciesDisplayName(sB);
 
   result.innerHTML = `
     <div class="verdict-banner ${v.cls}">
@@ -6357,17 +6538,17 @@ function renderCompatResult(sA, sB){
     </div>
 
     <div class="compat-pair-head">
-      <div class="compat-fish-card">${fishIcon(fA.color)}<div><h4>${sA.name}</h4><div class="latin">${sA.latin}</div></div></div>
-      <div class="compat-fish-card">${fishIcon(fB.color)}<div><h4>${sB.name}</h4><div class="latin">${sB.latin}</div></div></div>
+      <div class="compat-fish-card">${fishIcon(fA.color)}<div><h4>${nameA}</h4><div class="latin">${sA.latin}</div></div></div>
+      <div class="compat-fish-card">${fishIcon(fB.color)}<div><h4>${nameB}</h4><div class="latin">${sB.latin}</div></div></div>
     </div>
 
     <div class="dual-range-row">
-      <div class="dual-range-head"><span>수온</span><span>${fA.temp[0]}~${fA.temp[1]}°C vs ${fB.temp[0]}~${fB.temp[1]}°C</span></div>
+      <div class="dual-range-head"><span>${currentLang==='ko'?'수온':'Temp'}</span><span>${fA.temp[0]}~${fA.temp[1]}°C vs ${fB.temp[0]}~${fB.temp[1]}°C</span></div>
       ${renderDualBar(fA.temp, fB.temp, compat.tempOverlap, COMPAT_TEMP_RANGE[0], COMPAT_TEMP_RANGE[1], fA.color, fB.color)}
       <div class="dual-legend">
-        <span><span class="legend-dot" style="background:${fA.color}"></span>${sA.name}</span>
-        <span><span class="legend-dot" style="background:${fB.color}"></span>${sB.name}</span>
-        <span><span class="legend-dot" style="background:var(--teal);opacity:.5"></span>공통 구간</span>
+        <span><span class="legend-dot" style="background:${fA.color}"></span>${nameA}</span>
+        <span><span class="legend-dot" style="background:${fB.color}"></span>${nameB}</span>
+        <span><span class="legend-dot" style="background:var(--teal);opacity:.5"></span>${currentLang==='ko'?'공통 구간':'Overlap'}</span>
       </div>
     </div>
 
@@ -6376,42 +6557,34 @@ function renderCompatResult(sA, sB){
       ${renderDualBar(fA.ph, fB.ph, compat.phOverlap, COMPAT_PH_RANGE[0], COMPAT_PH_RANGE[1], fA.color, fB.color)}
     </div>
 
-    <div class="spec-label" style="margin:24px 0 10px;">체크 결과</div>
+    <div class="spec-label" style="margin:24px 0 10px;">${currentLang==='ko'?'체크 결과':'Check results'}${currentLang==='en' ? ' <span style="font-weight:400;color:var(--muted);font-size:11px;">(reasons shown in Korean)</span>' : ''}</div>
     <ul class="reason-list">
       ${compat.reasons.map(r=>`<li class="reason-item ${r.sev===0?'ok':r.sev===1?'caution':'bad'}"><span class="reason-mark">${r.sev===0?'✓':r.sev===1?'!':'✕'}</span><span>${r.text}</span></li>`).join('')}
     </ul>
 
-    <div class="spec-label" style="margin:24px 0 10px;">권장 최소 어항</div>
-    <div class="tips">두 어종 중 더 큰 요구치를 기준으로 <b>${compat.tankMin}L 이상</b>을 권장합니다. 실제로는 마리 수와 여과 능력에 따라 더 커져야 할 수 있습니다.</div>
+    <div class="spec-label" style="margin:24px 0 10px;">${t('recommendedTank')}</div>
+    <div class="tips">${currentLang==='ko'
+      ? `두 어종 중 더 큰 요구치를 기준으로 <b>${compat.tankMin}L 이상</b>을 권장합니다. 실제로는 마리 수와 여과 능력에 따라 더 커져야 할 수 있습니다.`
+      : `Based on the larger of the two species' requirements, we recommend at least <b>${compat.tankMin}L</b>. The actual number may need to be higher depending on stocking count and filtration.`}</div>
   `;
 }
-
-document.getElementById('compatBtn').addEventListener('click', ()=>{
-  const sA = selectedCompatA || findSpeciesByInput(document.getElementById('compatInputA').value);
-  const sB = selectedCompatB || findSpeciesByInput(document.getElementById('compatInputB').value);
-  const result = document.getElementById('compatResult');
-  if(!sA || !sB){
-    result.innerHTML = `<div class="compat-empty">자동완성 목록에서 어종을 선택해주세요.</div>`;
-    return;
-  }
-  renderCompatResult(sA, sB);
-});
 
 // ---------------------------------------------------------------
 // 어항 구성 체크 (3종 이상 한번에) — 기존 2종 비교 엔진을 재사용해서
 // 모든 종 쌍(pair)을 다 비교하고, 그중 가장 심각한 결과를 대표값으로 씀
 // ---------------------------------------------------------------
-const tankPanelHTML = `
-  <p class="sub" style="margin-bottom:24px;">계획 중인 어항 구성을 전부 넣으면, 모든 종 조합을 한번에 확인해드려요.</p>
+function buildTankPanelHTML(){
+  return `
+  <p class="sub" style="margin-bottom:24px;">${t('tankCheckSub')}</p>
   <div class="tank-add-row">
-    <input type="text" id="tankAddInput" autocomplete="off" placeholder="어종 추가 (예: 네온테트라)" />
+    <input type="text" id="tankAddInput" autocomplete="off" placeholder="${t('addSpeciesPlaceholder')}" />
     <div class="suggest-list" id="tankAddSuggest"></div>
   </div>
   <div class="tank-chips" id="tankChips"></div>
-  <button class="compat-btn" id="tankCheckBtn">전체 체크하기</button>
+  <button class="compat-btn" id="tankCheckBtn">${t('tankCheckBtn')}</button>
   <div id="tankResult" style="margin-top:24px;"></div>
 `;
-document.getElementById('tankPanelWrap').innerHTML = tankPanelHTML;
+}
 
 let tankSpecies = [];
 
@@ -6420,7 +6593,7 @@ function renderTankChips(){
   wrap.innerHTML = tankSpecies.map(s=>`
     <div class="tank-chip">
       <span>${displayLabel(s)}</span>
-      <button data-id="${s.id}" aria-label="제거">×</button>
+      <button data-id="${s.id}" aria-label="remove">×</button>
     </div>`).join('');
   wrap.querySelectorAll('button').forEach(btn=>{
     btn.addEventListener('click', ()=>{
@@ -6430,13 +6603,18 @@ function renderTankChips(){
   });
 }
 
-attachAutocomplete('tankAddInput', 'tankAddSuggest', (s)=>{
-  if(!tankSpecies.find(x=>x.id===s.id)){
-    tankSpecies.push(s);
-    renderTankChips();
-  }
-  document.getElementById('tankAddInput').value = '';
-}, ()=>{});
+function initTankPanel(){
+  document.getElementById('tankPanelWrap').innerHTML = buildTankPanelHTML();
+  renderTankChips();
+  attachAutocomplete('tankAddInput', 'tankAddSuggest', (s)=>{
+    if(!tankSpecies.find(x=>x.id===s.id)){
+      tankSpecies.push(s);
+      renderTankChips();
+    }
+    document.getElementById('tankAddInput').value = '';
+  }, ()=>{});
+  document.getElementById('tankCheckBtn').addEventListener('click', renderTankResult);
+}
 
 function computeTankCheck(list){
   const pairs = [];
@@ -6462,19 +6640,19 @@ function computeTankCheck(list){
 function renderTankResult(){
   const result = document.getElementById('tankResult');
   if(tankSpecies.length < 2){
-    result.innerHTML = `<div class="compat-empty">최소 2종 이상 추가해주세요.</div>`;
+    result.innerHTML = `<div class="compat-empty">${t('needTwoSpecies')}</div>`;
     return;
   }
   const check = computeTankCheck(tankSpecies);
   const verdictMap = {
-    0:{cls:'ok', icon:'✓', title:'전체 합사 적합', sub:'모든 조합이 무난하게 맞습니다.'},
-    1:{cls:'caution', icon:'!', title:'일부 조합 주의 필요', sub:'아래 상세 조합을 확인해보세요.'},
-    2:{cls:'bad', icon:'✕', title:'일부 조합 비추천', sub:'아래에서 어떤 종 조합이 문제인지 확인해보세요.'},
+    0:{cls:'ok', icon:'✓', title:t('tankVerdictOkTitle'), sub:t('tankVerdictOkSub')},
+    1:{cls:'caution', icon:'!', title:t('tankVerdictCautionTitle'), sub:t('tankVerdictCautionSub')},
+    2:{cls:'bad', icon:'✕', title:t('tankVerdictBadTitle'), sub:t('tankVerdictBadSub')},
   };
   const v = verdictMap[check.worst];
 
-  const tempText = check.combinedTemp ? `${check.combinedTemp[0]}~${check.combinedTemp[1]}°C` : '겹치는 구간 없음 ⚠';
-  const phText = check.combinedPh ? `${check.combinedPh[0].toFixed(1)}~${check.combinedPh[1].toFixed(1)}` : '겹치는 구간 없음 ⚠';
+  const tempText = check.combinedTemp ? `${check.combinedTemp[0]}~${check.combinedTemp[1]}°C` : t('noOverlap');
+  const phText = check.combinedPh ? `${check.combinedPh[0].toFixed(1)}~${check.combinedPh[1].toFixed(1)}` : t('noOverlap');
 
   const pairRows = check.pairs
     .slice()
@@ -6487,8 +6665,8 @@ function renderTankResult(){
       <div class="pair-row ${sevCls}">
         <div class="pair-mark">${mark}</div>
         <div style="flex:1;">
-          <div class="pair-names">${p.a.name} × ${p.b.name}</div>
-          ${notableReasons.length ? `<div class="pair-reasons">${notableReasons.join(' · ')}</div>` : `<div class="pair-reasons">특이사항 없음</div>`}
+          <div class="pair-names">${speciesDisplayName(p.a)} × ${speciesDisplayName(p.b)}</div>
+          ${notableReasons.length ? `<div class="pair-reasons">${notableReasons.join(' · ')}</div>` : `<div class="pair-reasons">${t('noNotable')}</div>`}
         </div>
       </div>`;
     }).join('');
@@ -6503,18 +6681,16 @@ function renderTankResult(){
     </div>
 
     <div class="facts" style="margin-bottom:24px;">
-      <div><div class="fact-label">공통 수온 구간</div><div class="fact-val">${tempText}</div></div>
-      <div><div class="fact-label">공통 pH 구간</div><div class="fact-val">${phText}</div></div>
-      <div><div class="fact-label">권장 최소 어항</div><div class="fact-val">${check.recommendedTank}L 이상</div></div>
-      <div><div class="fact-label">비교한 조합 수</div><div class="fact-val">${check.pairs.length}쌍 (${tankSpecies.length}종)</div></div>
+      <div><div class="fact-label">${t('commonTemp')}</div><div class="fact-val">${tempText}</div></div>
+      <div><div class="fact-label">${t('commonPh')}</div><div class="fact-val">${phText}</div></div>
+      <div><div class="fact-label">${t('recommendedTank')}</div><div class="fact-val">${check.recommendedTank}L${currentLang==='ko'?' 이상':'+'}</div></div>
+      <div><div class="fact-label">${t('comparedPairs')}</div><div class="fact-val">${t('pairsUnit', check.pairs.length, tankSpecies.length)}</div></div>
     </div>
 
-    <div class="spec-label" style="margin-bottom:10px;">종 쌍별 상세 결과 (심각한 순)</div>
+    <div class="spec-label" style="margin-bottom:10px;">${t('pairDetailLabel')}</div>
     ${pairRows}
   `;
 }
-
-document.getElementById('tankCheckBtn').addEventListener('click', renderTankResult);
 
 // ---------------------------------------------------------------
 // 내 어항 (My Tank) — localStorage 기반 CRUD.
@@ -6605,14 +6781,14 @@ function unitSelectHTML(id){
   </select>`;
 }
 
-function tankCardHTML(t){
-  const overdueCount = (t.reminders||[]).filter(r=>reminderStatus(r)!=='ok').length;
-  const totalCount = (t.species||[]).reduce((sum,s)=>sum+(s.count||1), 0);
-  return `<div class="tank-card" data-id="${t.id}">
-    <div class="liter-badge">${fmtVol(t.volumeL)}</div>
-    <h3>${t.name}</h3>
-    <div class="tank-meta">${fmtLen(t.lengthCm)}×${fmtLen(t.widthCm)}×${fmtLen(t.heightCm)} · 어종 ${(t.species||[]).length}종 · 총 ${totalCount}마리</div>
-    ${overdueCount ? `<div class="due-badge">할 일 ${overdueCount}건</div>` : ''}
+function tankCardHTML(tk){
+  const overdueCount = (tk.reminders||[]).filter(r=>reminderStatus(r)!=='ok').length;
+  const totalCount = (tk.species||[]).reduce((sum,s)=>sum+(s.count||1), 0);
+  return `<div class="tank-card" data-id="${tk.id}">
+    <div class="liter-badge">${fmtVol(tk.volumeL)}</div>
+    <h3>${tk.name}</h3>
+    <div class="tank-meta">${fmtLen(tk.lengthCm)}×${fmtLen(tk.widthCm)}×${fmtLen(tk.heightCm)} · ${(tk.species||[]).length}${currentLang==='ko'?'종':' species'} · ${totalCount}${currentLang==='ko'?'마리':' total'}</div>
+    ${overdueCount ? `<div class="due-badge">${currentLang==='ko'?`할 일 ${overdueCount}건`:`${overdueCount} due`}</div>` : ''}
   </div>`;
 }
 
@@ -6624,14 +6800,14 @@ function renderMyTankPanel(){
     const tanks = loadTanks();
     wrap.innerHTML = `
       <div class="mytank-toolbar">
-        <p class="sub" style="margin:0;">저장한 어항 구성을 관리하고, 스토킹/수질 기록/리마인더를 확인하세요.</p>
+        <p class="sub" style="margin:0;">${t('myTankSub')}</p>
         <div style="display:flex;gap:10px;align-items:center;">
           ${unitSelectHTML('unitSelectGlobal')}
-          <button class="compat-btn" id="addTankBtn">+ 새 어항 추가</button>
+          <button class="compat-btn" id="addTankBtn">${t('addTankBtn')}</button>
         </div>
       </div>
       ${tanks.length ? `<div class="tank-grid">${tanks.map(tankCardHTML).join('')}</div>`
-        : `<div class="compat-empty">아직 저장한 어항이 없습니다. "새 어항 추가"로 시작해보세요.</div>`}
+        : `<div class="compat-empty">${t('noTanksYet')}</div>`}
     `;
     document.getElementById('unitSelectGlobal').addEventListener('change', (e)=>{
       saveUnit(e.target.value);
@@ -6658,32 +6834,32 @@ function renderMyTankPanel(){
 
 function renderTankFormView(wrap, editId){
   const tanks = loadTanks();
-  const existing = editId ? tanks.find(t=>t.id===editId) : null;
+  const existing = editId ? tanks.find(tk=>tk.id===editId) : null;
   let lenCm = existing ? existing.lengthCm : 0;
   let widCm = existing ? existing.widthCm : 0;
   let heiCm = existing ? existing.heightCm : 0;
   let formSpecies = existing ? existing.species.map(s=>Object.assign({}, s)) : [];
 
   wrap.innerHTML = `
-    <button class="detail-back" id="backBtn">← 목록으로</button>
-    <div class="spec-label" style="margin-bottom:16px;">${existing ? '어항 수정' : '새 어항 추가'}</div>
-    <div class="form-row"><label>어항 이름</label><input type="text" id="tankNameInput" value="${existing?existing.name:''}" placeholder="예: 거실 60cm 어항" /></div>
-    <div class="form-row"><label>단위</label>${unitSelectHTML('unitSelect')}</div>
+    <button class="detail-back" id="backBtn">${t('backToList')}</button>
+    <div class="spec-label" style="margin-bottom:16px;">${existing ? t('editTank') : t('addTank')}</div>
+    <div class="form-row"><label>${t('tankName')}</label><input type="text" id="tankNameInput" value="${existing?existing.name:''}" placeholder="${t('tankNamePlaceholder')}" /></div>
+    <div class="form-row"><label>${t('unitLabel')}</label>${unitSelectHTML('unitSelect')}</div>
     <div class="form-inline">
-      <div class="form-row"><label id="lenLabel">가로</label><input type="number" id="tankLenInput" /></div>
-      <div class="form-row"><label id="widLabel">세로/폭</label><input type="number" id="tankWidInput" /></div>
-      <div class="form-row"><label id="heiLabel">높이</label><input type="number" id="tankHeiInput" /></div>
+      <div class="form-row"><label id="lenLabel">${t('lenLabel', lenUnitLabel())}</label><input type="number" id="tankLenInput" /></div>
+      <div class="form-row"><label id="widLabel">${t('widLabel', lenUnitLabel())}</label><input type="number" id="tankWidInput" /></div>
+      <div class="form-row"><label id="heiLabel">${t('heiLabel', lenUnitLabel())}</label><input type="number" id="tankHeiInput" /></div>
     </div>
-    <div class="form-row"><label>예상 부피</label><div id="volumePreview" style="font-family:'JetBrains Mono',monospace;color:var(--teal);font-size:18px;"></div></div>
+    <div class="form-row"><label>${t('volumeLabel')}</label><div id="volumePreview" style="font-family:'JetBrains Mono',monospace;color:var(--teal);font-size:18px;"></div></div>
     <div class="form-row" style="position:relative;">
-      <label>어종 추가</label>
-      <input type="text" id="tankFormAddInput" autocomplete="off" placeholder="어종 검색" />
+      <label>${t('addSpeciesLabel')}</label>
+      <input type="text" id="tankFormAddInput" autocomplete="off" placeholder="${t('speciesSearchPlaceholder')}" />
       <div class="suggest-list" id="tankFormAddSuggest"></div>
     </div>
     <div class="tank-chips" id="tankFormChips"></div>
     <div id="deleteArea" style="margin-top:20px;">
-      <button class="compat-btn" id="saveTankBtn">${existing?'저장':'추가'}</button>
-      ${existing ? `<button class="btn-small danger" id="deleteTankBtn" style="margin-left:10px;">삭제</button>` : ''}
+      <button class="compat-btn" id="saveTankBtn">${existing?t('saveBtn'):t('addBtn')}</button>
+      ${existing ? `<button class="btn-small danger" id="deleteTankBtn" style="margin-left:10px;">${t('deleteBtn')}</button>` : ''}
     </div>
   `;
 
@@ -6691,9 +6867,9 @@ function renderTankFormView(wrap, editId){
     document.getElementById('tankLenInput').value = round1(cmToDisplay(lenCm)) || '';
     document.getElementById('tankWidInput').value = round1(cmToDisplay(widCm)) || '';
     document.getElementById('tankHeiInput').value = round1(cmToDisplay(heiCm)) || '';
-    document.getElementById('lenLabel').textContent = `가로(${lenUnitLabel()})`;
-    document.getElementById('widLabel').textContent = `세로/폭(${lenUnitLabel()})`;
-    document.getElementById('heiLabel').textContent = `높이(${lenUnitLabel()})`;
+    document.getElementById('lenLabel').textContent = t('lenLabel', lenUnitLabel());
+    document.getElementById('widLabel').textContent = t('widLabel', lenUnitLabel());
+    document.getElementById('heiLabel').textContent = t('heiLabel', lenUnitLabel());
     updateVolume();
   }
   function updateVolume(){
@@ -6717,7 +6893,7 @@ function renderTankFormView(wrap, editId){
         <span>${displayLabel(s)}</span>
         <input type="number" class="chip-count-input" min="1" value="${fs.count}" data-id="${fs.id}"
           style="width:44px;background:var(--surface-2);border:1px solid var(--line);border-radius:6px;color:var(--text);text-align:center;padding:4px;" />
-        <span style="font-size:11px;color:var(--muted);">마리</span>
+        ${currentLang==='ko' ? `<span style="font-size:11px;color:var(--muted);">${t('unitCount')}</span>` : ''}
         <button data-id="${fs.id}">×</button>
       </div>`;
     }).join('');
@@ -6750,11 +6926,11 @@ function renderTankFormView(wrap, editId){
   });
 
   document.getElementById('saveTankBtn').addEventListener('click', ()=>{
-    const name = document.getElementById('tankNameInput').value.trim() || '이름 없는 어항';
+    const name = document.getElementById('tankNameInput').value.trim() || (currentLang==='ko' ? '이름 없는 어항' : 'Unnamed tank');
     const volumeL = Math.round((lenCm*widCm*heiCm)/1000);
     let tanks2 = loadTanks();
     if(existing){
-      const idx = tanks2.findIndex(t=>t.id===existing.id);
+      const idx = tanks2.findIndex(tk=>tk.id===existing.id);
       tanks2[idx] = Object.assign({}, existing, {name, lengthCm:lenCm, widthCm:widCm, heightCm:heiCm, volumeL, species:formSpecies});
     } else {
       tanks2.push({id: uid(), name, lengthCm:lenCm, widthCm:widCm, heightCm:heiCm, volumeL, species:formSpecies, waterLog:[], reminders:[]});
@@ -6767,14 +6943,14 @@ function renderTankFormView(wrap, editId){
   if(existing){
     document.getElementById('deleteTankBtn').addEventListener('click', ()=>{
       document.getElementById('deleteArea').innerHTML = `
-        <span style="font-size:13px;color:var(--danger);">정말 삭제할까요? 수질 기록과 리마인더도 함께 삭제됩니다.</span>
+        <span style="font-size:13px;color:var(--danger);">${t('confirmDeleteText')}</span>
         <div style="margin-top:10px;display:flex;gap:8px;">
-          <button class="btn-small danger" id="confirmDeleteBtn">예, 삭제합니다</button>
-          <button class="btn-small" id="cancelDeleteBtn">취소</button>
+          <button class="btn-small danger" id="confirmDeleteBtn">${t('confirmDeleteYes')}</button>
+          <button class="btn-small" id="cancelDeleteBtn">${t('cancelBtn')}</button>
         </div>
       `;
       document.getElementById('confirmDeleteBtn').addEventListener('click', ()=>{
-        saveTanks(loadTanks().filter(t=>t.id!==existing.id));
+        saveTanks(loadTanks().filter(tk=>tk.id!==existing.id));
         currentMyTankView = {mode:'list'};
         renderMyTankPanel();
       });
@@ -6787,22 +6963,22 @@ function renderTankFormView(wrap, editId){
 }
 
 function renderTankDetailView(wrap, id, subtab){
-  const tank = loadTanks().find(t=>t.id===id);
+  const tank = loadTanks().find(tk=>tk.id===id);
   if(!tank){ currentMyTankView = {mode:'list'}; renderMyTankPanel(); return; }
 
   wrap.innerHTML = `
-    <button class="detail-back" id="backBtn">← 목록으로</button>
+    <button class="detail-back" id="backBtn">${t('backToList')}</button>
     <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px;">
       <div>
         <h2 style="font-family:'Space Grotesk',sans-serif;margin:0 0 4px;font-size:22px;">${tank.name}</h2>
         <div class="tank-meta">${fmtLen(tank.lengthCm)}×${fmtLen(tank.widthCm)}×${fmtLen(tank.heightCm)} · ${fmtVol(tank.volumeL)}</div>
       </div>
-      <button class="btn-small" id="editTankBtn">수정</button>
+      <button class="btn-small" id="editTankBtn">${t('editBtn')}</button>
     </div>
     <div class="detail-tabs">
-      <button class="detail-tab-btn ${subtab==='stocking'?'active':''}" data-sub="stocking">스토킹</button>
-      <button class="detail-tab-btn ${subtab==='waterlog'?'active':''}" data-sub="waterlog">수질 기록</button>
-      <button class="detail-tab-btn ${subtab==='reminders'?'active':''}" data-sub="reminders">리마인더</button>
+      <button class="detail-tab-btn ${subtab==='stocking'?'active':''}" data-sub="stocking">${t('subStocking')}</button>
+      <button class="detail-tab-btn ${subtab==='waterlog'?'active':''}" data-sub="waterlog">${t('subWaterlog')}</button>
+      <button class="detail-tab-btn ${subtab==='reminders'?'active':''}" data-sub="reminders">${t('subReminders')}</button>
     </div>
     <div id="detailSubContent"></div>
   `;
@@ -6834,7 +7010,7 @@ function renderStockingSub(content, tank){
   }).filter(Boolean);
 
   if(species.length === 0){
-    content.innerHTML = `<div class="compat-empty">등록된 어종이 없습니다. "수정"에서 어종을 추가해보세요.</div>`;
+    content.innerHTML = `<div class="compat-empty">${t('noSpeciesRegistered')}</div>`;
     return;
   }
   const totalCount = species.reduce((sum,s)=>sum+(s.count||1), 0);
@@ -6848,23 +7024,23 @@ function renderStockingSub(content, tank){
     pairHTML = check.pairs.slice().sort((a,b)=>b.result.severity-a.result.severity).map(p=>{
       const sevCls = p.result.severity===0?'ok':p.result.severity===1?'caution':'bad';
       const mark = p.result.severity===0?'✓':p.result.severity===1?'!':'✕';
-      return `<div class="pair-row ${sevCls}"><div class="pair-mark">${mark}</div><div class="pair-names">${p.a.name} × ${p.b.name}</div></div>`;
+      return `<div class="pair-row ${sevCls}"><div class="pair-mark">${mark}</div><div class="pair-names">${speciesDisplayName(p.a)} × ${speciesDisplayName(p.b)}</div></div>`;
     }).join('');
   }
 
   content.innerHTML = `
     <div class="facts" style="margin-bottom:16px;">
-      <div><div class="fact-label">현재 어항 용량</div><div class="fact-val">${fmtVol(tank.volumeL)}</div></div>
-      <div><div class="fact-label">권장 최소 용량</div><div class="fact-val">${fmtVol(recommendedTank)}</div></div>
-      <div><div class="fact-label">총 개체수</div><div class="fact-val">${totalCount}마리</div></div>
+      <div><div class="fact-label">${t('currentVolume')}</div><div class="fact-val">${fmtVol(tank.volumeL)}</div></div>
+      <div><div class="fact-label">${t('recommendedMin')}</div><div class="fact-val">${fmtVol(recommendedTank)}</div></div>
+      <div><div class="fact-label">${t('totalCount')}</div><div class="fact-val">${totalCount}${currentLang==='ko'?'마리':''}</div></div>
     </div>
     <div class="stock-bar-track"><div class="stock-bar-fill" style="width:${utilization}%;background:${barColor};"></div></div>
     <div style="font-size:12px;color:var(--muted);margin-bottom:20px;">
-      ${tank.volumeL >= recommendedTank ? '충분한 용량입니다.' : `권장 용량보다 ${fmtVol(recommendedTank - tank.volumeL)} 부족합니다.`}
+      ${tank.volumeL >= recommendedTank ? t('sufficientVolume') : t('shortVolume', fmtVol(recommendedTank - tank.volumeL))}
     </div>
-    <div class="spec-label" style="margin-bottom:10px;">등록된 어종 (${species.length}종 · ${totalCount}마리)</div>
+    <div class="spec-label" style="margin-bottom:10px;">${t('registeredSpecies', species.length, totalCount)}</div>
     <div class="tank-chips" style="margin-bottom:20px;">${species.map(s=>`<div class="tank-chip"><span>${displayLabel(s)} ×${s.count}</span></div>`).join('')}</div>
-    ${species.length >= 2 ? `<div class="spec-label" style="margin-bottom:10px;">종 쌍 궁합</div>${pairHTML}` : ''}
+    ${species.length >= 2 ? `<div class="spec-label" style="margin-bottom:10px;">${t('pairCompat')}</div>${pairHTML}` : ''}
   `;
 }
 
@@ -6887,7 +7063,7 @@ function renderLineChart(log){
   const showPh = vp.length > 0;
   return `<div class="chart-wrap">
     <div class="chart-legend">
-      <span><span class="legend-dot" style="background:var(--teal)"></span>온도</span>
+      <span><span class="legend-dot" style="background:var(--teal)"></span>${t('tempLabel')}</span>
       ${showPh ? `<span><span class="legend-dot" style="background:var(--amber)"></span>pH</span>` : ''}
     </div>
     <svg viewBox="0 0 ${w} ${h}" style="width:100%;height:auto;">
@@ -6903,23 +7079,23 @@ function renderWaterLogSub(content, tank){
 
   content.innerHTML = `
     <div class="form-inline">
-      <div class="form-row"><label>날짜</label><input type="date" id="logDate" value="${todayStr()}" /></div>
-      <div class="form-row"><label>온도(°C)</label><input type="number" step="0.1" id="logTemp" /></div>
+      <div class="form-row"><label>${t('dateLabel')}</label><input type="date" id="logDate" value="${todayStr()}" /></div>
+      <div class="form-row"><label>${t('tempLabel')}</label><input type="number" step="0.1" id="logTemp" /></div>
     </div>
-    <div class="form-row"><label>내용(메모)</label><input type="text" id="logNote" placeholder="예: 물갈이 30%, 특이사항 없음" /></div>
+    <div class="form-row"><label>${t('noteLabel')}</label><input type="text" id="logNote" placeholder="${t('notePlaceholder')}" /></div>
     ${enabledWaterFields.length ? `<div class="form-inline">${enabledWaterFields.map(k=>{
         const f = OPTIONAL_WATER_FIELDS.find(x=>x.key===k);
         return `<div class="form-row">
-          <label>${f.label} <button class="btn-small danger" data-remove-field="${f.key}" style="padding:1px 7px;margin-left:4px;font-size:11px;">삭제</button></label>
+          <label>${f.label} <button class="btn-small danger" data-remove-field="${f.key}" style="padding:1px 7px;margin-left:4px;font-size:11px;">${t('deleteBtn')}</button></label>
           <input type="number" step="${f.step}" id="log_${f.key}" />
         </div>`;
       }).join('')}</div>` : ''}
     ${hiddenFields.length ? `<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
-      ${hiddenFields.map(f=>`<button class="btn-small" data-add-field="${f.key}">+ ${f.label} 추가</button>`).join('')}
+      ${hiddenFields.map(f=>`<button class="btn-small" data-add-field="${f.key}">+ ${f.label}</button>`).join('')}
     </div>` : ''}
-    <button class="compat-btn" id="addLogBtn">기록 추가</button>
+    <button class="compat-btn" id="addLogBtn">${t('addLogBtn')}</button>
     ${log.length ? renderLineChart(log) : ''}
-    ${log.length ? renderLogTable(log) : `<div class="compat-empty">아직 기록이 없습니다.</div>`}
+    ${log.length ? renderLogTable(log) : `<div class="compat-empty">${t('noLogsYet')}</div>`}
   `;
 
   content.querySelectorAll('[data-remove-field]').forEach(btn=>{
@@ -6950,13 +7126,13 @@ function renderWaterLogSub(content, tank){
       const el = document.getElementById('log_'+f.key);
       entry[f.key] = el ? parseFloatOrNull(el.value) : null;
     });
-    updateTank(tank.id, t=>{ t.waterLog = t.waterLog || []; t.waterLog.push(entry); });
+    updateTank(tank.id, tk=>{ tk.waterLog = tk.waterLog || []; tk.waterLog.push(entry); });
     currentMyTankView = {mode:'detail', id: tank.id, subtab:'waterlog'};
     renderMyTankPanel();
   });
   content.querySelectorAll('[data-log-id]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
-      updateTank(tank.id, t=>{ t.waterLog = (t.waterLog||[]).filter(e=>e.id!==btn.dataset.logId); });
+      updateTank(tank.id, tk=>{ tk.waterLog = (tk.waterLog||[]).filter(e=>e.id!==btn.dataset.logId); });
       currentMyTankView = {mode:'detail', id: tank.id, subtab:'waterlog'};
       renderMyTankPanel();
     });
@@ -6965,13 +7141,13 @@ function renderWaterLogSub(content, tank){
 
 function renderLogTable(log){
   const extraFields = OPTIONAL_WATER_FIELDS.filter(f => enabledWaterFields.includes(f.key) || log.some(e=>e[f.key]!=null));
-  const headers = ['날짜','온도','내용', ...extraFields.map(f=>f.label), ''];
+  const headers = [t('dateLabel'), t('tempLabel'), t('noteLabel'), ...extraFields.map(f=>f.label), ''];
   return `<table class="log-table">
     <thead><tr>${headers.map(h=>`<th>${h}</th>`).join('')}</tr></thead>
     <tbody>${log.slice().reverse().map(e=>`<tr>
       <td>${e.date}</td><td>${e.temp??'-'}</td><td>${e.note??'-'}</td>
       ${extraFields.map(f=>`<td>${e[f.key]??'-'}</td>`).join('')}
-      <td><button class="btn-small danger" data-log-id="${e.id}">삭제</button></td>
+      <td><button class="btn-small danger" data-log-id="${e.id}">${t('deleteBtn')}</button></td>
     </tr>`).join('')}</tbody>
   </table>`;
 }
@@ -6979,12 +7155,12 @@ function renderLogTable(log){
 function reminderRowHTML(r){
   const status = reminderStatus(r);
   const nextDue = addDaysStr(r.lastDone, r.intervalDays);
-  const statusText = status==='overdue' ? `지연됨 (예정일: ${nextDue})` : status==='due-today' ? '오늘 할 일' : `다음: ${nextDue}`;
+  const statusText = status==='overdue' ? t('overdueText', nextDue) : status==='due-today' ? t('dueTodayText') : t('nextDueText', nextDue);
   return `<div class="reminder-row ${status}">
-    <div><div class="r-label">${r.label}</div><div class="r-meta">${r.intervalDays}일 주기 · ${statusText}</div></div>
+    <div><div class="r-label">${r.label}</div><div class="r-meta">${t('dayCycle', r.intervalDays)} · ${statusText}</div></div>
     <div class="r-actions">
-      <button class="btn-small" data-done-id="${r.id}">완료</button>
-      <button class="btn-small danger" data-del-id="${r.id}">삭제</button>
+      <button class="btn-small" data-done-id="${r.id}">${t('doneBtn')}</button>
+      <button class="btn-small danger" data-del-id="${r.id}">${t('deleteBtn')}</button>
     </div>
   </div>`;
 }
@@ -6993,29 +7169,29 @@ function renderRemindersSub(content, tank){
   const reminders = tank.reminders || [];
   content.innerHTML = `
     <div class="form-inline">
-      <div class="form-row" style="flex:2;"><label>할 일</label><input type="text" id="remLabel" placeholder="예: 급여, 수질교체" /></div>
-      <div class="form-row"><label>주기(일)</label><input type="number" id="remInterval" value="7" /></div>
+      <div class="form-row" style="flex:2;"><label>${t('todoLabel')}</label><input type="text" id="remLabel" placeholder="${t('todoPlaceholder')}" /></div>
+      <div class="form-row"><label>${t('intervalLabel')}</label><input type="number" id="remInterval" value="7" /></div>
     </div>
-    <button class="compat-btn" id="addRemBtn">리마인더 추가</button>
+    <button class="compat-btn" id="addRemBtn">${t('addReminderBtn')}</button>
     <div style="margin-top:20px;">
-      ${reminders.length ? reminders.map(reminderRowHTML).join('') : '<div class="compat-empty">등록된 리마인더가 없습니다.</div>'}
+      ${reminders.length ? reminders.map(reminderRowHTML).join('') : `<div class="compat-empty">${t('noReminders')}</div>`}
     </div>
   `;
   document.getElementById('addRemBtn').addEventListener('click', ()=>{
     const label = document.getElementById('remLabel').value.trim();
     const interval = parseInt(document.getElementById('remInterval').value) || 7;
     if(!label) return;
-    updateTank(tank.id, t=>{
-      t.reminders = t.reminders || [];
-      t.reminders.push({id: uid(), label, intervalDays: interval, lastDone: todayStr()});
+    updateTank(tank.id, tk=>{
+      tk.reminders = tk.reminders || [];
+      tk.reminders.push({id: uid(), label, intervalDays: interval, lastDone: todayStr()});
     });
     currentMyTankView = {mode:'detail', id: tank.id, subtab:'reminders'};
     renderMyTankPanel();
   });
   content.querySelectorAll('[data-done-id]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
-      updateTank(tank.id, t=>{
-        const r = (t.reminders||[]).find(x=>x.id===btn.dataset.doneId);
+      updateTank(tank.id, tk=>{
+        const r = (tk.reminders||[]).find(x=>x.id===btn.dataset.doneId);
         if(r) r.lastDone = todayStr();
       });
       currentMyTankView = {mode:'detail', id: tank.id, subtab:'reminders'};
@@ -7024,12 +7200,42 @@ function renderRemindersSub(content, tank){
   });
   content.querySelectorAll('[data-del-id]').forEach(btn=>{
     btn.addEventListener('click', ()=>{
-      updateTank(tank.id, t=>{ t.reminders = (t.reminders||[]).filter(x=>x.id!==btn.dataset.delId); });
+      updateTank(tank.id, tk=>{ tk.reminders = (tk.reminders||[]).filter(x=>x.id!==btn.dataset.delId); });
       currentMyTankView = {mode:'detail', id: tank.id, subtab:'reminders'};
       renderMyTankPanel();
     });
   });
 }
+
+// ---------------------------------------------------------------
+// 초기화 + 언어 전환
+// ---------------------------------------------------------------
+initCompatPanel();
+initTankPanel();
+
+function applyStaticTranslations(){
+  document.getElementById('eyebrowText').textContent = t('eyebrow');
+  document.getElementById('appTitle').textContent = t('appTitle');
+  document.getElementById('appSubtitle').textContent = t('appSubtitle', speciesList.length, Object.keys(careGroups).length);
+  document.getElementById('tabBtnDex').textContent = t('tabDex');
+  document.getElementById('tabBtnCompat').textContent = t('tabCompat');
+  document.getElementById('tabBtnTank').textContent = t('tabTank');
+  document.getElementById('tabBtnMyTank').textContent = t('tabMyTank');
+}
+
+function setLang(lang){
+  currentLang = lang;
+  localStorage.setItem(LANG_KEY, lang);
+  applyStaticTranslations();
+  initDexPanel();
+  initCompatPanel();
+  initTankPanel();
+  renderMyTankPanel();
+}
+
+document.getElementById('langSelect').value = currentLang;
+document.getElementById('langSelect').addEventListener('change', (e)=>{ setLang(e.target.value); });
+applyStaticTranslations();
 
 // Tab switching
 document.querySelectorAll('.tab-btn').forEach(btn=>{

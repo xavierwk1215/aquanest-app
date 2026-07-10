@@ -1,5 +1,7 @@
 # 열대어 도감 & 합사 호환성 체커 (Tropical Fish Species Guide & Compatibility Checker)
 
+[English](README.en.md) | 한국어
+
 개인 프로젝트 — 열대어 사육자를 위한 종 도감, 어항 합사(tankmate) 호환성 판정 엔진, 개인 어항 관리 도구.
 
 **Live prototype**: (배포 후 링크 추가 예정)
